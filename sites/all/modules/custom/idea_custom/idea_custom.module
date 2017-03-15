@@ -1,0 +1,648 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: nhan
+ * Date: 2/20/17
+ * Time: 11:10 PM
+ */
+/**
+ * @return array
+ * Implement hook_menu()
+ */
+function idea_custom_menu()
+{
+    $items = array();
+
+    $items['admin/dashboard'] = array(
+        'title' => 'Admin Dashboard ',
+        'description' => 'Control config for artline.',
+        'page callback' => 'artline_admins_dashboard',
+        'access arguments' => array('administer artline'),
+    );
+    $items['frontpage/pager'] = array(
+        'page callback' => 'idea_custom_article_more',
+        'access callback' => TRUE,
+        'file' => 'idea_custom.pages.inc',
+    );
+    $items['frontpage'] = array(
+        'title' => 'Kho ý tưởng',
+        'page callback' => 'idea_custom_frontpage',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+
+    $items['idea/comment/post'] = array(
+        'page callback' => 'idea_custom_comment',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+    $items['idea/comment/get'] = array(
+        'page callback' => 'idea_custom_comment_get',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+
+    $items['idea/like/post'] = array(
+        'page callback' => 'idea_custom_like_post_action',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+
+    $items['idea/save/post'] = array(
+        'page callback' => 'idea_custom_save_post_action',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+
+    $items['idea/login'] = array(
+        'page callback' => 'idea_custom_login',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+
+    $items['idea/share/post/%node'] = array(
+        'page callback' => 'idea_custom_share_post_action',
+        'page arguments' => array(3),
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+
+    $items['idea/post/idea'] = array(
+        'page callback' => 'idea_custom_post_idea',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+
+    return $items;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function idea_custom_theme()
+{
+    $items = array();
+
+    $items['idea_account_info'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-account-info',
+    );
+
+    $items['idea_post_form'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-post-form',
+    );
+
+    $items['idea_user_link'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-user-link',
+    );
+
+    $items['idea_post_detail'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-post-detail',
+    );
+
+    $items['idea_frontpage'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-frontpage',
+    );
+    $items['idea_frontpage_top'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-frontpage-top',
+    );
+    $items['idea_frontpage_pager'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-frontpage-pager',
+    );
+    $items['idea_post_relate'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-post-relate',
+    );
+
+    $items['idea_comment'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-comment',
+    );
+
+    $items['idea_comment_form'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-comment-form',
+    );
+
+    $items['idea_comment_ajax'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-comment-ajax',
+    );
+
+    $items['idea_share_post'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-share-button',
+    );
+
+    return $items;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function idea_custom_block_info()
+{
+    $blocks = array();
+    $blocks['idea_search_icon'] = array(
+        'info' => t('Idea Search Icon'),
+    );
+    $blocks['account_info'] = array(
+        'info' => t('Idea Account Info'),
+    );
+    $blocks['post_form'] = array(
+        'info' => t('Idea Post form'),
+    );
+    $blocks['user_link'] = array(
+        'info' => t('User Link'),
+    );
+    $blocks['post_detail'] = array(
+        'info' => t('Post detail'),
+    );
+    $blocks['idea_loading'] = array(
+        'info' => t('Idea loading'),
+    );
+    $blocks['idea_post_relate'] = array(
+        'info' => t('Idea Post Relate'),
+    );
+    $blocks['idea_post_front_top'] = array(
+        'info' => t('Idea Post top'),
+    );
+
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function idea_custom_block_view($delta = '')
+{
+    $block = array();
+    global $user;
+    switch ($delta) {
+        case 'idea_search_icon' :
+            $block['content'] = '<div class="idea-search-icon"><a href="#">search</a></div>';
+            break;
+
+        case 'account_info' :
+            $profile = false;
+            if ($user->uid > 0) {
+                $account = user_load($user->uid);
+                if ($account->status > 0) {
+                    $profile = theme('idea_account_info', array('account' => $account));
+                }
+            }
+
+            $block['content'] = $profile;
+            break;
+        case 'user_link' :
+            $account = user_load($user->uid);
+            $block['content'] = theme('idea_user_link', array('account' => $account));
+            break;
+        case 'post_form' :
+            $block['content'] = theme('idea_post_form');
+            break;
+        case 'post_detail' :
+            $block['content'] = theme('idea_post_detail');
+            break;
+        case 'idea_loading' :
+            $block['content'] = '<div class="idea-loading"><img src="' . base_path() . path_to_theme('idea') . '/images/ajax-loader.gif"/></div>';
+            break;
+        case 'idea_post_relate' :
+            $block['content'] = idea_custom_post_relate();
+            break;
+
+        case 'idea_post_front_top' :
+            $block['content'] = idea_custom_front_top();
+            break;
+    }
+
+    return $block;
+}
+
+/**
+ * Idea post relate
+ */
+
+function idea_custom_post_relate()
+{
+    //add js and css
+    drupal_add_js(drupal_get_path('module', 'idea_custom') . '/js/amazingcarousel.js');
+    drupal_add_js(drupal_get_path('module', 'idea_custom') . '/js/initcarousel.js');
+    drupal_add_css(drupal_get_path('module', 'idea_custom') . '/css/initcarousel.css');
+
+
+    $nid = arg(1);
+    $data = array();
+    $query = db_select('node', 'n');
+    $query->fields('n');
+    $query->condition('type', 'idea');
+    $query->condition('status', NODE_PUBLISHED);
+    $query->condition('nid', $nid, '<>');
+    $query->orderBy('changed', 'DESC');
+    $result = $query->execute()->fetchAll();
+
+    if ($result) {
+        foreach ($result as $n) {
+            $node = node_load($n->nid);
+            $data[] = $node;
+        }
+    }
+    return theme('idea_post_relate', array('nodes' => $data));
+}
+
+
+/**
+ * function tracking log
+ */
+
+function idea_custom_logs($nid, $type)
+{
+    global $user;
+    $uid = $user->uid;
+    $message = _idea_log_type($type, $uid, $nid);
+    db_insert('idea_logs')// Table name no longer needs {}
+    ->fields(array(
+        'uid' => $uid,
+        'nid' => $nid,
+        'type' => $type,
+        'ip' => ip_address(),
+        'message' => $message,
+        'created' => REQUEST_TIME
+    ))
+        ->execute();
+}
+
+/**
+ * Log type with message
+ */
+function _idea_log_type($type, $uid, $nid)
+{
+    $message = null;
+    switch ($type) {
+        case 'like':
+            $message = 'User ' . $uid . ' like post .' . $nid;
+            break;
+        case 'view':
+            $message = 'User ' . $uid . ' view post .' . $nid;
+            break;
+        case 'comment':
+            $message = 'User ' . $uid . ' comment post .' . $nid;
+            break;
+        case 'share':
+            $message = 'User ' . $uid . ' share post .' . $nid;
+            break;
+        case 'save':
+            $message = 'User ' . $uid . ' save post .' . $nid;
+            break;
+    }
+    return $message;
+}
+
+/**
+ * function like post
+ */
+function idea_custom_like_post($nid)
+{
+    global $user;
+    $node = node_load($nid);
+    if ($node && $node->status == NODE_PUBLISHED && $user->status == NODE_PUBLISHED) {
+        if (idea_custom_check_liked($nid)) {
+            db_insert('idea_likes')// Table name no longer needs {}
+            ->fields(array(
+                'uid' => $user->uid,
+                'nid' => $nid,
+                'count' => 1,
+                'ip' => ip_address(),
+                'created' => REQUEST_TIME
+            ))
+                ->execute();
+            $node->field_like[LANGUAGE_NONE][0]['value'] = ($node->field_like[LANGUAGE_NONE][0]['value'] + 1);
+            node_save($node);
+            //track log
+            idea_custom_logs($nid, 'like');
+            print _get_liked_post($nid);
+        } else {
+            print $node->field_like[LANGUAGE_NONE][0]['value'];
+        }
+
+
+    } else {
+        print 'Access denied';
+
+    }
+    drupal_exit();
+}
+
+/**
+ * function view post
+ */
+function idea_custom_view_post($nid)
+{
+    global $user;
+    $node = node_load($nid);
+    if ($node && $node->status == NODE_PUBLISHED && $user->status == NODE_PUBLISHED) {
+        db_insert('idea_views')// Table name no longer needs {}
+        ->fields(array(
+            'uid' => $user->uid,
+            'nid' => $nid,
+            'count' => 1,
+            'ip' => ip_address(),
+            'created' => REQUEST_TIME
+        ))
+            ->execute();
+        $node->field_views[LANGUAGE_NONE][0]['value'] = ($node->field_views[LANGUAGE_NONE][0]['value'] + 1);
+        node_save($node);
+        //track log
+        idea_custom_logs($nid, 'view');
+
+        // print 'ok';
+
+    }
+}
+
+/**
+ * function share post
+ */
+function idea_custom_share_post($nid)
+{
+    global $user;
+    $node = node_load($nid);
+    if ($node && $node->status == NODE_PUBLISHED && $user->status == NODE_PUBLISHED) {
+        db_insert('idea_share')// Table name no longer needs {}
+        ->fields(array(
+            'uid' => $user->uid,
+            'nid' => $nid,
+            'count' => 1,
+            'ip' => ip_address(),
+            'created' => REQUEST_TIME
+        ))
+            ->execute();
+        $node->field_share[LANGUAGE_NONE][0]['value'] = ($node->field_share[LANGUAGE_NONE][0]['value'] + 1);
+        node_save($node);
+        //track log
+        idea_custom_logs($nid, 'share');
+
+        print $node->field_share[LANGUAGE_NONE][0]['value'];
+
+    } else {
+        print $node->field_share[LANGUAGE_NONE][0]['value'];
+
+    }
+    drupal_exit();
+}
+
+/**
+ * function save post
+ */
+function idea_custom_save_post($nid)
+{
+    global $user;
+    $node = node_load($nid);
+    if ($node && $node->status == NODE_PUBLISHED && $user->status == NODE_PUBLISHED) {
+        if (idea_custom_check_save($nid)) {
+            db_insert('idea_save')// Table name no longer needs {}
+            ->fields(array(
+                'uid' => $user->uid,
+                'nid' => $nid,
+                'count' => 1,
+                'ip' => ip_address(),
+                'created' => REQUEST_TIME
+            ))
+                ->execute();
+            $node->field_save[LANGUAGE_NONE][0]['value'] = ($node->field_save[LANGUAGE_NONE][0]['value'] + 1);
+            node_save($node);
+            //track log
+            idea_custom_logs($nid, 'save');
+
+            print $node->field_save[LANGUAGE_NONE][0]['value'];
+        } else {
+            print $node->field_save[LANGUAGE_NONE][0]['value'];
+        }
+
+    } else {
+        print 'Access denied';
+
+    }
+    drupal_exit();
+}
+
+/**
+ * check user liked
+ */
+function idea_custom_check_liked($nid)
+{
+    global $user;
+    $query = db_select('idea_likes', 'il');
+    $query->fields('il');
+    $query->condition('uid', $user->uid);
+    $query->condition('nid', $nid);
+    $result = $query->execute()->fetchAll();
+    if ($result) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/**
+ * check user liked
+ */
+function idea_custom_check_save($nid)
+{
+    global $user;
+    $query = db_select('idea_save', 'il');
+    $query->fields('il');
+    $query->condition('uid', $user->uid);
+    $query->condition('nid', $nid);
+    $result = $query->execute()->fetchAll();
+    if ($result) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/**
+ * Get article Top
+ */
+function idea_custom_front_top()
+{
+    $query = db_select('node', 'n');
+    $query->fields('n');
+    $query->condition('type', 'idea');
+    $query->condition('status', NODE_PUBLISHED);
+    $query->orderBy('changed', 'DESC');
+    $query->range(0, 1);
+    $result = $query->execute()->fetchObject();
+
+    if ($result) {
+        $node = node_load($result->nid);
+        return theme('idea_frontpage_top', array('node' => $node));
+    } else {
+        return false;
+    }
+
+}
+
+/**
+ * Filter bad word
+ */
+function filter_bad_word($text)
+{
+    if (variable_get('filter_word')) {
+        $filters = variable_get('filter_word');
+        $filters = explode(',', $filters);
+        foreach ($filters as $filter) {
+            $content = '';
+            $content .= trim($filter);
+            $content .= ' ';
+            $text = str_replace($content, ' *** ', $text);
+        }
+    }
+    return $text;
+}
+
+/**
+ * Get comment by node
+ */
+function idea_custom_get_comment($nid)
+{
+
+    $node = node_load($nid);
+    $query = db_select('comment', 'c');
+    $query->fields('c');
+    $query->condition('nid', $nid);
+    $query->condition('status', 1);
+    $query->orderBy('created', 'ASC');
+    $result = $query->execute()->fetchAllAssoc('cid');
+    $data = array();
+    if ($result) {
+        foreach ($result as $key => $c) {
+            $data[$key] = comment_load($key);
+        }
+        return theme('idea_comment', array('comments' => $data));
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Get comment by node
+ */
+function idea_custom_get_comment_more($nid, $page=null)
+{
+
+    $node = node_load($nid);
+    $query = db_select('comment', 'c');
+    $query->fields('c');
+    $query->condition('nid', $nid);
+    $query->condition('status', 1);
+    $query->orderBy('created', 'DESC');
+    $query->range(0, 5);
+    $result = $query->execute()->fetchAllAssoc('cid');
+    $data = array();
+    if ($result) {
+        foreach ($result as $key => $c) {
+            $data[$key] = comment_load($key);
+        }
+        ksort($data);
+        return theme('idea_comment', array('comments' => $data));
+    } else {
+        return false;
+    }
+}
+
+/**
+ * idea comment form
+ */
+function idea_comment_form($nid, $page = null)
+{
+    return theme('idea_comment_form', array('nid' => $nid, 'page'=> $page));
+}
+
+/**
+ * Get comment by node
+ */
+function idea_custom_get_comment_check($nid)
+{
+
+    $node = node_load($nid);
+    $query = db_select('comment', 'c');
+    $query->fields('c');
+    $query->condition('nid', $nid);
+    $query->condition('status', 1);
+    $query->orderBy('created', 'ASC');
+    $result = $query->execute()->fetchAllAssoc('cid');
+    $data = array();
+    if ($result) {
+        foreach ($result as $key => $c) {
+            $data[$key] = comment_load($key);
+        }
+        return $data;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * Get liked of node
+ */
+function _get_liked_post($nid)
+{
+    $node = node_load($nid);
+    return $node->field_like[LANGUAGE_NONE][0]['value'];
+}
+
+/**
+ * get comment count
+ */
+function _get_comment_count($nid)
+{
+    $query = db_select('comment', 'c');
+    $query->fields('c');
+    $query->condition('nid', $nid);
+    $query->condition('status', 1);
+    $result = $query->execute()->fetchAll();
+    if ($result) {
+        return count($result);
+    } else {
+        return 0;
+    }
+}
+
+/**
+ * implement hook node_view
+ */
+function idea_custom_node_view($node)
+{
+    if ($node->type = 'idea') {
+        idea_custom_view_post($node->nid);
+    }
+}

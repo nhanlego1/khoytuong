@@ -1,0 +1,7 @@
+name = Idea Custom
+description = "The Custom module for Kho Y Tuong"
+package = Administration
+core = 7.x
+
+
+
