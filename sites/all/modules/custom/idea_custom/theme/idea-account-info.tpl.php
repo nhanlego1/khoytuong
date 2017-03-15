@@ -34,8 +34,8 @@
         <?php if (isset($account->field_phone[LANGUAGE_NONE])): ?>
             <li class="phone"><a href="#"><?php print $account->field_phone[LANGUAGE_NONE][0]['value'] ?></a></li>
         <?php endif; ?>
-        <li class="mypost"><a href="#">Bài viết của tôi <span>12700</span></a></li>
-        <li class="favor"><a href="#">Bài viết quan tâm <span>130</span></a></li>
+        <li class="mypost"><a href="#">Bài viết của tôi <span><?php  print _idea_get_post_count();?></span></a></li>
+        <li class="favor"><a href="#">Bài viết quan tâm <span><?php print _idea_get_favor_count() ?></span></a></li>
         <li class="withdraw"><a href="#">Đổi điểm</a></li>
         <li class="invite"><a href="#">Mời bạn bè</a></li>
     </ul>

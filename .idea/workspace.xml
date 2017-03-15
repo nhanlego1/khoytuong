@@ -24,8 +24,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="474" column="14" selection-start-line="474" selection-start-column="14" selection-end-line="474" selection-end-column="14" />
+            <state relative-caret-position="423">
+              <caret line="817" column="1" selection-start-line="817" selection-start-column="1" selection-end-line="817" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -34,8 +34,18 @@
       <file leaf-file-name="idea-account-info.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="26" column="109" selection-start-line="26" selection-start-column="109" selection-end-line="26" selection-end-column="109" />
+            <state relative-caret-position="481">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="idea_custom.pages.inc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -44,8 +54,8 @@
       <file leaf-file-name="idea-comment-form.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-comment-form.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+            <state relative-caret-position="90">
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -61,6 +71,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="idea.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/js/idea.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="142" column="68" selection-start-line="142" selection-start-column="68" selection-end-line="142" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="idea-frontpage-top.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,24 +91,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="true">
+      <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="584" column="46" selection-start-line="584" selection-start-column="46" selection-end-line="584" selection-end-column="46" />
+            <state relative-caret-position="286">
+              <caret line="670" column="9" selection-start-line="670" selection-start-column="9" selection-end-line="670" selection-end-column="32" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="idea-frontpage.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="55" column="82" selection-start-line="55" selection-start-column="82" selection-end-line="55" selection-end-column="94" />
-              <folding>
-                <element signature="e#6#85#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -108,16 +116,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="47" column="68" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="idea.info" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/idea.info">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -154,19 +152,19 @@
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-comment.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-comment-ajax.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/templates/views/views-view-fields--article-popular--block.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc" />
-        <option value="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/idea.info" />
-        <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-post-form.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-post-detail.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-pager.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/js/initcarousel.js" />
-        <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-comment-form.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
+        <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc" />
       </list>
     </option>
   </component>
@@ -833,12 +831,12 @@
       <workItem from="1487660069415" duration="9047000" />
       <workItem from="1487861151362" duration="1093000" />
       <workItem from="1488214341907" duration="48194000" />
-      <workItem from="1489506073940" duration="7309000" />
+      <workItem from="1489506073940" duration="8328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72603000" />
+    <option name="totallyTimeSpent" value="73622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
@@ -1078,6 +1076,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1208,34 +1207,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="168" column="55" selection-start-line="168" selection-start-column="55" selection-end-line="168" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/js/idea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="219" column="15" selection-start-line="219" selection-start-column="15" selection-end-line="219" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/idea.info">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="109" selection-start-line="26" selection-start-column="109" selection-end-line="26" selection-end-column="109" />
           <folding />
         </state>
       </provider>
@@ -1274,26 +1249,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="474" column="14" selection-start-line="474" selection-start-column="14" selection-end-line="474" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-post-form.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-comment-form.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1306,10 +1265,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-comment-form.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/js/idea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="142" column="68" selection-start-line="142" selection-start-column="68" selection-end-line="142" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="817" column="1" selection-start-line="817" selection-start-column="1" selection-end-line="817" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="584" column="46" selection-start-line="584" selection-start-column="46" selection-end-line="584" selection-end-column="46" />
+        <state relative-caret-position="286">
+          <caret line="670" column="9" selection-start-line="670" selection-start-column="9" selection-end-line="670" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="28" />
           <folding />
         </state>
       </provider>

@@ -9,7 +9,7 @@ global $user;
 $current_user = user_load($user->uid);
 ?>
 
-<div class="comment-post-s">
+<div class="comment-post-s comment-post-s-<?php print $nid ?>">
 
     <div data="<?php print $nid ?>" class="comment-items comment-items-<?php print $nid ?>">
         <?php print idea_custom_get_comment_more($nid, $page) ?>

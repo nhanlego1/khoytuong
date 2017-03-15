@@ -646,3 +646,39 @@ function idea_custom_node_view($node)
         idea_custom_view_post($node->nid);
     }
 }
+
+/**
+ * My post number
+ */
+function _idea_get_post_count(){
+    global $user;
+    $query = db_select('node','n');
+    $query->fields('n');
+    $query->condition('type','idea');
+    $query->condition('status',1);
+    $query->condition('uid',$user->uid);
+    $result=$query->execute()->fetchAll();
+    if($result){
+        return count($result);
+    }else{
+        return 0;
+    }
+}
+
+/**
+ * My post number
+ */
+function _idea_get_favor_count(){
+    global $user;
+    $query = db_select('idea_views','n');
+    $query->fields('n');
+    $query->condition('uid',$user->uid);
+    $result=$query->execute()->fetchAll();
+    $count = 0;
+    if($result){
+        foreach($result as $r){
+            $count += $r->count;
+        }
+    }
+    return $count;
+}

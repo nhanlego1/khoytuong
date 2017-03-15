@@ -140,6 +140,7 @@
                     var _nid = $(this).attr('data');
                     $(this).click(function () {
                         $('.comment-post-form-' + _nid).show();
+                        $(".view-news-article .comment-post-s-"+_nid).show();
                         return false;
                     });
                 });

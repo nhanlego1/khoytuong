@@ -20,7 +20,7 @@ function idea_get_article($start = 0, $end = 5) {
     $query->fields('n');
     $query->condition('type', 'idea');
     $query->condition('status', NODE_PUBLISHED);
-    $query->orderBy('changed', 'DESC');
+    $query->orderBy('created', 'DESC');
     if ($start == 0) {
         $start = 1;
     } else {
