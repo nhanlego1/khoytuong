@@ -30,12 +30,17 @@ global $user;
 <div class="popular-item">
     <div class="img-popular <?php if (isset($fields['field_video'])): ?>video-item<?php endif; ?>">
         <?php if (isset($fields['field_video'])): ?>
-            <a href="<?php print url('node/'.$nid) ?>">
-            <?php print $fields['field_img_thumb']->content ?>
+        <a href="<?php print url('node/' . $nid) ?>">
+            <?php if ($fields['field_img_thumb']): ?>
+                <?php print $fields['field_img_thumb']->content ?>
+            <?php else: ?>
+                <?php print theme('image_style', array('path' => $node->field_video[LANGUAGE_NONE][0]['thumbnail_path'], 'style_name' => 'article_hot')) ?>
+            <?php endif; ?>
+
             <span class="video-popular">
-                <img src="<?php print base_path().path_to_theme('idea') ?>/images/playvideo-64-64-0.png">
+                <img src="<?php print base_path() . path_to_theme('idea') ?>/images/playvideo-64-64-0.png">
             </span>
-            </a>
+        </a>
         <?php else: ?>
             <?php print $fields['field_img_thumb']->content ?>
         <?php endif; ?>

@@ -221,6 +221,19 @@
             });
 
 
+              //register, login
+
+            $(".register-action a").click(function(){
+               $(".block-user-login").hide();
+                $(".block-idea-custom-idea-register-user").show();
+                return false;
+            });
+
+            $(".login-action a").click(function(){
+                $(".block-user-login").show();
+                $(".block-idea-custom-idea-register-user").hide();
+                return false;
+            });
         }
     };
 })(jQuery);

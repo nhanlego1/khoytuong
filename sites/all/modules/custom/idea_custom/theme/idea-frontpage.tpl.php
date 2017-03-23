@@ -18,7 +18,11 @@
                         class="img-popular <?php if (isset($node->field_video[LANGUAGE_NONE])): ?>video-item<?php endif; ?>">
                         <?php if (isset($node->field_video[LANGUAGE_NONE])): ?>
                             <a href="<?php print url('node/' . $node->nid) ?>">
-                                <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')) ?>
+                                <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
+                                    <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')) ?>
+                                <?php else: ?>
+                                    <?php print theme('image_style', array('path' => $node->field_video[LANGUAGE_NONE][0]['thumbnail_path'], 'style_name' => 'article_hot')) ?>
+                                <?php endif; ?>
                                 <span class="video-popular">
                 <img src="<?php print base_path() . drupal_get_path('theme', 'idea') ?>/images/playvideo-64-64-0.png">
             </span>
@@ -26,7 +30,7 @@
                         <?php else: ?>
                         <a href="<?php print url('node/' . $node->nid) ?>">
                             <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')) ?>
-                        <?php endif; ?>
+                            <?php endif; ?>
                         </a>
                     </div>
                     <div class="title-popular">
@@ -44,19 +48,19 @@
                                     </a>
                                     <i class="count"><?php print $node->field_like[LANGUAGE_NONE][0]['value'] ?></i>
                             </span>
-                                <span class="view-post">
+                            <span class="view-post">
                                 <a data="<?php print $node->nid ?>" href="javascript:;"><i class="fa fa-eye"></i></a><i
-                                        class="count"><?php print $node->field_views[LANGUAGE_NONE][0]['value'] ?></i>
+                                    class="count"><?php print $node->field_views[LANGUAGE_NONE][0]['value'] ?></i>
                             </span>
-                                <span class="<?php if ($user->uid > 0): ?> comment-post  <?php endif; ?>">
+                            <span class="<?php if ($user->uid > 0): ?> comment-post  <?php endif; ?>">
                                 <?php if ($user->uid <= 0): ?>
-                                    <a class="cboxElement ajax-comment" data="<?php print $node->nid ?>"
-                                       href="<?php print url('idea/login') ?>">
+                                <a class="cboxElement ajax-comment" data="<?php print $node->nid ?>"
+                                   href="<?php print url('idea/login') ?>">
                                     <?php else: ?>
-                                        <a data="<?php print $node->nid ?>" href="javascript:;">
+                                    <a data="<?php print $node->nid ?>" href="javascript:;">
                                         <?php endif; ?>
-                                            <i class="fa fa-comments"></i></a><i
-                                            class="count"><?php print _get_comment_count($node->nid) ?></i>
+                                        <i class="fa fa-comments"></i></a><i
+                                        class="count"><?php print _get_comment_count($node->nid) ?></i>
                             </span>
                         </div>
                         <div class="clearfix"></div>
