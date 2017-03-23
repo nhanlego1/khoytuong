@@ -1138,3 +1138,6 @@ ul.menu li a{
 .block-views-ads-left-home-block-1{
     margin-bottom: 20px;
 }
+#amazingcarousel-2 .amazingcarousel-image img {
+    max-height: 87px;
+}
