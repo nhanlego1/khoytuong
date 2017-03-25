@@ -197,6 +197,9 @@ function idea_custom_block_info()
     $blocks['idea_register_user'] = array(
         'info' => t('User Register'),
     );
+    $blocks['idea_custom_button'] = array(
+        'info' => t('Bottom Button'),
+    );
 
     return $blocks;
 }
@@ -243,6 +246,16 @@ function idea_custom_block_view($delta = '')
 
         case 'idea_post_front_top' :
             $block['content'] = idea_custom_front_top();
+            break;
+        case 'idea_custom_button' :
+            $class='cboxElement post_bottom_login';
+            $href = '/idea/login';
+
+            if($user->uid > 0){
+                $class='';
+                $href = '/node/add/idea';
+            }
+            $block['content'] = '<a class="post_bottom '.$class.'" href="'.$href.'"></a>';
             break;
         case 'idea_register_user' :
             $register = false;
@@ -504,11 +517,27 @@ function idea_custom_check_save($nid)
  */
 function idea_custom_front_top()
 {
+    global $user;
     $query = db_select('node', 'n');
     $query->fields('n');
+
+    if ($user->uid > 0) {
+        if (in_array('admin', $user->roles) || in_array('administrator', $user->roles)) {
+            $query->condition(db_or()
+                ->condition('status', 1)
+                ->condition('status', 0)
+            );
+        } else {
+            $query->condition(db_or()
+                ->condition('uid', $user->uid)
+                ->condition('status', 1)
+            );
+        }
+    } else {
+        $query->condition('status', NODE_PUBLISHED);
+    }
     $query->condition('type', 'idea');
-    $query->condition('status', NODE_PUBLISHED);
-    $query->orderBy('changed', 'DESC');
+    $query->orderBy('created', 'DESC');
     $query->range(0, 1);
     $result = $query->execute()->fetchObject();
 
@@ -666,7 +695,7 @@ function _idea_get_post_count()
     $query = db_select('node', 'n');
     $query->fields('n');
     $query->condition('type', 'idea');
-    $query->condition('status', 1);
+  //  $query->condition('status', 1);
     $query->condition('uid', $user->uid);
     $result = $query->execute()->fetchAll();
     if ($result) {
@@ -682,14 +711,15 @@ function _idea_get_post_count()
 function _idea_get_favor_count()
 {
     global $user;
-    $query = db_select('idea_views', 'n');
+    $query = db_select('idea_save', 'n');
     $query->fields('n');
     $query->condition('uid', $user->uid);
     $result = $query->execute()->fetchAll();
     $count = 0;
+
     if ($result) {
         foreach ($result as $r) {
-            $count += $r->count;
+            $count+= $r->count;
         }
     }
     return $count;

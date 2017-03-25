@@ -15,18 +15,26 @@
             <div class="popular-item">
                 <div
                     class="img-popular <?php if (isset($node->field_video[LANGUAGE_NONE])): ?>video-item<?php endif; ?>">
-                        <?php if (isset($node->field_video[LANGUAGE_NONE])): ?>
+                    <?php if (isset($node->field_video[LANGUAGE_NONE])): ?>
                         <a href="<?php print url('node/' . $node->nid) ?>">
-                            <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')) ?>
+                            <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
+                                <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')) ?>
+                            <?php else: ?>
+                                <?php print theme('image_style', array('path' => $node->field_video[LANGUAGE_NONE][0]['thumbnail_path'], 'style_name' => 'article_hot')) ?>
+                            <?php endif; ?>
                             <span class="video-popular">
-                                <img src="<?php print base_path() . drupal_get_path('theme', 'idea') ?>/images/playvideo-64-64-0.png">
-                            </span>
+                <img src="<?php print base_path() . drupal_get_path('theme', 'idea') ?>/images/playvideo-64-64-0.png">
+            </span>
                         </a>
                     <?php else: ?>
                     <a href="<?php print url('node/' . $node->nid) ?>">
-                        <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')) ?>
-                    </a>
+                        <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
+                            <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')); ?>
+                        <?php else: ?>
+                            <?php print theme('image_style', array('path' => $node->field_images[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')); ?>
                         <?php endif; ?>
+                        <?php endif; ?>
+                    </a>
                 </div>
                 <div class="title-popular">
                     <a href="<?php print url('node/' . $node->nid) ?>"><?php print $node->title; ?></a>
