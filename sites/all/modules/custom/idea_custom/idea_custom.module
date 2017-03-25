@@ -744,3 +744,18 @@ function idea_custom_form_alter(&$form, &$form_state, $form_id)
         );
     }
 }
+
+/**
+ * hook_user_insert
+ */
+function idea_custom_user_presave(&$edit, $account, $category)
+{
+    $select = db_select('user_profile_tmp', 'tt');
+    $select->fields('tt');
+    $select->condition('email', $account->mail);
+    $result = $select->execute()->fetchObject();
+    if ($result) {
+        $edit['field_full_name'][LANGUAGE_NONE][0]['value'] = $result->name;
+    }
+
+}

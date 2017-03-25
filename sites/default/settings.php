@@ -250,8 +250,8 @@ $databases = array (
     'default' => 
     array (
       'database' => 'khoytuong',
-      'username' => 'nhan',
-      'password' => '@abcd1234',
+      'username' => 'root',
+      'password' => 'root',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
