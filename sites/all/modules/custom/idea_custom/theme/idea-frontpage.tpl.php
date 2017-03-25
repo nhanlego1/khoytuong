@@ -29,7 +29,11 @@
                             </a>
                         <?php else: ?>
                         <a href="<?php print url('node/' . $node->nid) ?>">
-                            <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')) ?>
+                            <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
+                                <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')); ?>
+                            <?php else: ?>
+                                <?php print theme('image_style', array('path' => $node->field_images[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_hot')); ?>
+                            <?php endif; ?>
                             <?php endif; ?>
                         </a>
                     </div>

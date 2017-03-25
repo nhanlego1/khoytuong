@@ -214,6 +214,7 @@
             $(".ajax-comment").colorbox({width: "340px", height: "400px"});
             $(".ajax-save").colorbox({width: "340px", height: "400px"});
             $(".idea-post_ajax").colorbox({width: "460px", height: "600px"});
+            $(".user_not_login").colorbox({width: "340px", height: "400px"});
             $('input').iCheck({
                 checkboxClass: 'icheckbox_minimal-blue',
                 radioClass: 'iradio_minimal-blue',
@@ -233,6 +234,17 @@
                 $(".block-user-login").show();
                 $(".block-idea-custom-idea-register-user").hide();
                 return false;
+            });
+            //click login
+            $(".post_bottom").click(function(){
+                $(".post_bottom_login").click();
+            });
+
+            //close share dislog
+            $("#share-buttons a").each(function(){
+               $(this).click(function(){
+                   $.fn.colorbox.close();
+               });
             });
         }
     };

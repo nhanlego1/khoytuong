@@ -1141,3 +1141,45 @@ ul.menu li a{
 #amazingcarousel-2 .amazingcarousel-image img {
     max-height: 87px;
 }
+.flexslider {
+    margin: 0 0 0px;
+    background: none;
+    border: 0px solid #fff;
+    position: relative;
+    zoom: 1;
+    border-radius: 0
+}
+.flex-control-nav{
+    display: none;
+}
+.view-ads-left-home{
+    text-align: center;
+}
+.social_login{
+    height: 60px;
+    overflow: hidden;
+}
+.social_login label{
+    display: none;
+}
+
+.post_bottom {
+    border: none;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+    display: inline-block;
+    height: 56px;
+    outline: none;
+    position: fixed;
+    text-align: center;
+    width: 56px;
+    z-index: 999999;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    bottom: 16px;
+    right: 16px;
+    background: url(../images/post-icon.png) no-repeat center #48649f;
+}

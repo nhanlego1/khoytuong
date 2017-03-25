@@ -15,11 +15,28 @@ function idea_custom_frontpage() {
  * implement query node
  */
 function idea_get_article($start = 0, $end = 5) {
+    global $user;
+
     $data = array();
     $query = db_select('node', 'n');
     $query->fields('n');
+
+    if ($user->uid > 0) {
+        if (in_array('admin', $user->roles) || in_array('administrator', $user->roles)) {
+            $query->condition(db_or()
+                ->condition('status', 1)
+                ->condition('status', 0)
+            );
+        } else {
+            $query->condition(db_or()
+                ->condition('uid', $user->uid)
+                ->condition('status', 1)
+            );
+        }
+    } else {
+        $query->condition('status', NODE_PUBLISHED);
+    }
     $query->condition('type', 'idea');
-    $query->condition('status', NODE_PUBLISHED);
     $query->orderBy('created', 'DESC');
     if ($start == 0) {
         $start = 1;

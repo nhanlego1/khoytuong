@@ -35,7 +35,7 @@
             <li><i class="fa fa-phone"></i><a href="#"><?php print $account->field_phone[LANGUAGE_NONE][0]['value'] ?></a></li>
         <?php endif; ?>
         <li><i class="fa fa-edit"></i><a href="#">Bài viết của tôi <span><?php  print _idea_get_post_count();?></span></a></li>
-        <li><i class="fa fa-save"></i><a href="#">Bài viết quan tâm <span><?php print _idea_get_favor_count() ?></span></a></li>
+        <li><i class="fa fa-save"></i><a href="#">Bài viết quan tâm <span  class="save-count"><?php print _idea_get_favor_count() ?></span></a></li>
         <li><i class="fa fa-refresh"></i><a href="#">Đổi điểm</a></li>
         <li><i class="fa fa-group"></i><a href="#">Mời bạn bè</a></li>
     </ul>
