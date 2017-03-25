@@ -55,7 +55,7 @@
     <!--open graph-->
     <?php $node = menu_get_object('node'); ?>
     <?php if ($node->type == 'idea'): ?>
-        <meta property="og:title" content="$node->title"/>
+        <meta property="og:title" content="<?php print $node->title ?>"/>
         <meta property="og:type" content="article"/>
         <meta property="og:url" content="<?php print url('node/' . $node->nid, array('absolute' => true)) ?>"/>
         <?php if (isset($node->field_video[LANGUAGE_NONE])): ?>

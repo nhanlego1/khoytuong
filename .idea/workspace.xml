@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b76181a-9510-4f32-acc2-d8e8b280d108" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/default/files/styles/article_hot/public/video_embed_field_thumbnails/youtube/Rm_K5OW8MiY.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sites/default/files/styles/article_thumb/public/video_embed_field_thumbnails/youtube/Rm_K5OW8MiY.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-pager.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-pager.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-post-relate.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-post-relate.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" afterPath="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/templates/views/views-view-fields--article-popular--block.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/idea/templates/views/views-view-fields--article-popular--block.tpl.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php" />
     </list>
     <ignored path="idea.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +26,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="17685">
               <caret line="1179" column="37" selection-start-line="1179" selection-start-column="37" selection-end-line="1179" selection-end-column="37" />
               <folding />
             </state>
@@ -49,7 +36,7 @@
       <file leaf-file-name="idea-frontpage.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
+            <state relative-caret-position="285">
               <caret line="24" column="47" selection-start-line="20" selection-start-column="32" selection-end-line="24" selection-end-column="47" />
               <folding />
             </state>
@@ -59,7 +46,7 @@
       <file leaf-file-name="idea_custom.pages.inc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="495">
               <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding />
             </state>
@@ -69,7 +56,7 @@
       <file leaf-file-name="idea-post-relate.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-post-relate.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="465">
               <caret line="36" column="63" selection-start-line="32" selection-start-column="47" selection-end-line="36" selection-end-column="63" />
               <folding />
             </state>
@@ -89,7 +76,7 @@
       <file leaf-file-name="idea.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/js/idea.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
+            <state relative-caret-position="3675">
               <caret line="245" column="41" selection-start-line="245" selection-start-column="41" selection-end-line="245" selection-end-column="41" />
               <folding />
             </state>
@@ -99,8 +86,8 @@
       <file leaf-file-name="html.tpl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+            <state relative-caret-position="165">
+              <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -109,7 +96,7 @@
       <file leaf-file-name="views-view-fields--article-popular--block.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/templates/views/views-view-fields--article-popular--block.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="705">
               <caret line="47" column="146" selection-start-line="47" selection-start-column="146" selection-end-line="47" selection-end-column="146" />
               <folding />
             </state>
@@ -119,7 +106,7 @@
       <file leaf-file-name="idea-account-info.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="465">
               <caret line="36" column="100" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
               <folding />
             </state>
@@ -129,11 +116,9 @@
       <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
+            <state relative-caret-position="8010">
               <caret line="539" column="28" selection-start-line="539" selection-start-column="28" selection-end-line="539" selection-end-column="28" />
-              <folding>
-                <marker date="1490461887000" expanded="true" signature="7490:7528" ph="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -688,17 +673,18 @@
       <workItem from="1489506073940" duration="13191000" />
       <workItem from="1490188536733" duration="595000" />
       <workItem from="1490239505531" duration="20315000" />
+      <workItem from="1490464097719" duration="17000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99395000" />
+    <option name="totallyTimeSpent" value="99412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23828755" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24232633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -994,7 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="107" column="57" selection-start-line="107" selection-start-column="45" selection-end-line="107" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +1007,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/templates/views/views-view-fields--article-popular--block.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="705">
           <caret line="47" column="146" selection-start-line="47" selection-start-column="146" selection-end-line="47" selection-end-column="146" />
           <folding />
         </state>
@@ -1032,7 +1015,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-post-relate.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="465">
           <caret line="36" column="63" selection-start-line="32" selection-start-column="47" selection-end-line="36" selection-end-column="63" />
           <folding />
         </state>
@@ -1050,13 +1033,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-89">
           <caret line="594" column="32" selection-start-line="594" selection-start-column="32" selection-end-line="594" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="17685">
           <caret line="1179" column="37" selection-start-line="1179" selection-start-column="37" selection-end-line="1179" selection-end-column="37" />
           <folding />
         </state>
@@ -1064,7 +1046,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="465">
           <caret line="36" column="100" selection-start-line="36" selection-start-column="100" selection-end-line="36" selection-end-column="100" />
           <folding />
         </state>
@@ -1072,7 +1054,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="495">
           <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding />
         </state>
@@ -1080,17 +1062,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
+        <state relative-caret-position="8010">
           <caret line="539" column="28" selection-start-line="539" selection-start-column="28" selection-end-line="539" selection-end-column="28" />
-          <folding>
-            <marker date="1490461887000" expanded="true" signature="7490:7528" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/js/idea.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
+        <state relative-caret-position="3675">
           <caret line="245" column="41" selection-start-line="245" selection-start-column="41" selection-end-line="245" selection-end-column="41" />
           <folding />
         </state>
@@ -1098,7 +1078,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="285">
           <caret line="24" column="47" selection-start-line="20" selection-start-column="32" selection-end-line="24" selection-end-column="47" />
           <folding />
         </state>
@@ -1106,8 +1086,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+        <state relative-caret-position="165">
+          <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
           <folding />
         </state>
       </provider>
