@@ -246,6 +246,8 @@
                    $.fn.colorbox.close();
                });
             });
+
+
         }
     };
 })(jQuery);

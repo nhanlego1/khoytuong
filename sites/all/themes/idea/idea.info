@@ -46,6 +46,7 @@ scripts[] = js/icheck/icheck.js
 scripts[] = js/libs.min.js
 scripts[] = js/idea.js
 scripts[] = js/jquery.nice-select.js
+;scripts[] = js/jssor.slider-22.2.16.min.js
 
 
 ; Foundation framework scripts (minified).

@@ -1,3 +1,6 @@
+body{
+    background: #f0eeee!important;
+}
 body, body p,
 body a,
 body span, input {
@@ -1182,4 +1185,11 @@ ul.menu li a{
     bottom: 16px;
     right: 16px;
     background: url(../images/post-icon.png) no-repeat center #48649f;
+}
+
+.carousel-indicators{
+    display: none;
+}
+.glyphicon{
+    color: #fff;
 }

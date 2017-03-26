@@ -76,6 +76,8 @@
  */
 $user = user_load($node->uid);
 ?>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
 
@@ -88,8 +90,8 @@ $user = user_load($node->uid);
             <?php endif; ?>
         </div>
         <div class="name-link-post">
-            <?php if(isset($user->field_full_name)): ?>
-            <?php print $user->field_full_name[LANGUAGE_NONE][0]['value'] ?>
+            <?php if (isset($user->field_full_name)): ?>
+                <?php print $user->field_full_name[LANGUAGE_NONE][0]['value'] ?>
             <?php else: ?>
                 <?php print $user->name ?>
             <?php endif; ?>
@@ -105,9 +107,53 @@ $user = user_load($node->uid);
             <?php if (isset($content['field_video'])): ?>
                 <?php print render($content['field_video']); ?>
             <?php else: ?>
-                <?php print render($content['field_images']); ?>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <?php $count = 1; ?>
+                        <?php foreach ($node->field_images[LANGUAGE_NONE] as $key => $image): ?>
+                            <li data-target="#myCarousel" data-slide-to="<?php print $key ?>"
+                                class="<?php if ($count == 1) {
+                                    print 'active';
+                                } ?>"></li>
+                            <?php $count++; endforeach; ?>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <?php $count = 1; ?>
+                        <?php foreach ($node->field_images[LANGUAGE_NONE] as $image): ?>
+                            <div class="item <?php if ($count == 1) {
+                                print 'active';
+                            } ?>">
+                                <?php print theme('image_style', array('path' => $image['uri'], 'style_name' => 'article_full')) ?>
+                            </div>
+                            <?php $count++; endforeach; ?>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+<!--                <ul class="example-orbit" data-orbit>-->
+<!--                    --><?php //foreach ($node->field_images[LANGUAGE_NONE] as $image): ?>
+<!--                        <li>-->
+<!--                            --><?php //print theme('image_style', array('path' => $image['uri'], 'style_name' => 'article_full')) ?>
+<!--                        </li>-->
+<!--                        --><?php //endforeach; ?>
+<!--                </ul>-->
             <?php endif; ?>
+
         </div>
     </div>
 
 </article>
+
+
