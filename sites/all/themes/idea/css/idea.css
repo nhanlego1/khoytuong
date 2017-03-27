@@ -3310,8 +3310,8 @@ label.error {
 
 .row {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto!important;
+    margin-right: auto!important;
     margin-top: 0;
     margin-bottom: 0;
     max-width: 1256px;

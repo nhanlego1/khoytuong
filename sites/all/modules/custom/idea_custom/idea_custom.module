@@ -200,6 +200,9 @@ function idea_custom_block_info()
     $blocks['idea_custom_button'] = array(
         'info' => t('Bottom Button'),
     );
+    $blocks['idea_category_block'] = array(
+        'info' => t('Category block'),
+    );
 
     return $blocks;
 }
@@ -245,7 +248,18 @@ function idea_custom_block_view($delta = '')
             break;
 
         case 'idea_post_front_top' :
-            $block['content'] = idea_custom_front_top();
+            $cate = null;
+            if(arg(0)=='taxonomy' && arg(1)=='term' && arg(2) != null){
+                $cate = arg(2);
+            }
+            $block['content'] = idea_custom_front_top($cate);
+            break;
+        case 'idea_category_block' :
+            $cate = null;
+            if(arg(0)=='taxonomy' && arg(1)=='term' && arg(2) != null){
+                $cate = arg(2);
+            }
+            $block['content'] = idea_custom_front_top($cate);
             break;
         case 'idea_custom_button' :
             $class='cboxElement post_bottom_login';
@@ -515,29 +529,54 @@ function idea_custom_check_save($nid)
 /**
  * Get article Top
  */
-function idea_custom_front_top()
+function idea_custom_front_top($cate = null)
 {
     global $user;
-    $query = db_select('node', 'n');
-    $query->fields('n');
-
-    if ($user->uid > 0) {
-        if (in_array('admin', $user->roles) || in_array('administrator', $user->roles)) {
-            $query->condition(db_or()
-                ->condition('status', 1)
-                ->condition('status', 0)
-            );
+    if($cate != null){
+        $query = db_select('node','n');
+        $query->fields('n');
+        $query->join('taxonomy_index','ti','ti.nid = n.nid');
+        if ($user->uid > 0) {
+            if (in_array('admin', $user->roles) || in_array('administrator', $user->roles)) {
+                $query->condition(db_or()
+                    ->condition('n.status', 1)
+                    ->condition('n.status', 0)
+                );
+            } else {
+                $query->condition(db_or()
+                    ->condition('n.uid', $user->uid)
+                    ->condition('n.status', 1)
+                );
+            }
         } else {
-            $query->condition(db_or()
-                ->condition('uid', $user->uid)
-                ->condition('status', 1)
-            );
+            $query->condition('n.status', NODE_PUBLISHED);
         }
-    } else {
-        $query->condition('status', NODE_PUBLISHED);
+        $query->condition('ti.tid', $cate);
+        $query->condition('n.type', 'idea');
+        $query->orderBy('n.created', 'DESC');
+    }else{
+        $query = db_select('node', 'n');
+        $query->fields('n');
+
+        if ($user->uid > 0) {
+            if (in_array('admin', $user->roles) || in_array('administrator', $user->roles)) {
+                $query->condition(db_or()
+                    ->condition('status', 1)
+                    ->condition('status', 0)
+                );
+            } else {
+                $query->condition(db_or()
+                    ->condition('uid', $user->uid)
+                    ->condition('status', 1)
+                );
+            }
+        } else {
+            $query->condition('status', NODE_PUBLISHED);
+        }
+        $query->condition('type', 'idea');
+        $query->orderBy('created', 'DESC');
     }
-    $query->condition('type', 'idea');
-    $query->orderBy('created', 'DESC');
+
     $query->range(0, 1);
     $result = $query->execute()->fetchObject();
 
@@ -758,4 +797,75 @@ function idea_custom_user_presave(&$edit, $account, $category)
         $edit['field_full_name'][LANGUAGE_NONE][0]['value'] = $result->name;
     }
 
+}
+
+/**
+ * implement query node
+ */
+function idea_get_article_cate($start = 0, $end = 5) {
+    global $user;
+
+    $data = array();
+    $query = db_select('node', 'n');
+    $query->fields('n');
+
+    if ($user->uid > 0) {
+        if (in_array('admin', $user->roles) || in_array('administrator', $user->roles)) {
+            $query->condition(db_or()
+                ->condition('status', 1)
+                ->condition('status', 0)
+            );
+        } else {
+            $query->condition(db_or()
+                ->condition('uid', $user->uid)
+                ->condition('status', 1)
+            );
+        }
+    } else {
+        $query->condition('status', NODE_PUBLISHED);
+    }
+    $query->condition('type', 'idea');
+    $query->orderBy('created', 'DESC');
+    if ($start == 0) {
+        $start = 1;
+    } else {
+        $start = $start + 1;
+    }
+    $query->range($start, $end);
+    $result = $query->execute()->fetchAll();
+
+    if ($result) {
+        foreach ($result as $n) {
+            $node = node_load($n->nid);
+            $data[] = $node;
+        }
+    }
+    return $data;
+}
+
+/**
+ * Implement get more article
+ */
+function idea_custom_article_cate_more($pagesize = 5) {
+    $pager = 0;
+    $tid = null;
+    if (isset($_POST['pager'])) {
+        $pager = $_POST['pager'] * $pagesize;
+    }
+    if (isset($_POST['tid'])) {
+        $tid = $_POST['tid'];
+    }
+    $nodes = idea_get_article_cate($pager, $pagesize, $tid);
+    if ($nodes) {
+        print (render(theme('idea_frontpage_pager', array('nodes' => $nodes))));
+        drupal_exit();
+    } else {
+        print 'ko';
+        drupal_exit();
+    }
+}
+
+function idea_custom_frontpage_cate($tid) {
+    $nodes = idea_get_article_cate($start = 0, $end = 5, $tid);
+    return theme('idea_frontpage', array('nodes' => $nodes));
 }

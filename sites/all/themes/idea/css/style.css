@@ -4,7 +4,8 @@ body{
 body, body p,
 body a,
 body span, input {
-    font-family: 'Quicksand', sans-serif;
+    /*font-family: 'Quicksand', sans-serif;*/
+    font-family: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
     font-size: 16px;
     color: #363636;
     font-weight: normal;
@@ -15,13 +16,16 @@ h1, h2, h3, h4, h5, .title,
 .name-link-post,
 h1 a, h2 a, h3 a, h4 a, h5 a {
     color: #666;
-    font-family: '400/700 Quicksand', sans-serif;
+    /*font-family: '400/700 Quicksand', sans-serif;*/
+    font-weight: bold;
+
 }
 
 .post-information .title-name {
     color: #1C1C1C;
-    font-family: '400/700 Quicksand', sans-serif;
+    /*font-family: '400/700 Quicksand', sans-serif;*/
     font-size: 18px;
+    font-weight: bold;
 }
 
 .idea input[type="text"], .idea input[type="password"] {
@@ -105,7 +109,7 @@ button#edit-submit {
     padding-left: 52px;
     cursor: pointer;
     padding-top: 10px;
-    font-family: 'Quicksand', sans-serif;
+    /*font-family: 'Quicksand', sans-serif;*/
     font-size: 16px;
 }
 
@@ -1192,4 +1196,20 @@ ul.menu li a{
 }
 .glyphicon{
     color: #fff;
+}
+.top-right-fixed {
+    position: fixed;
+    top: 0;
+    right: 4px;
+}
+.top-left-fixed {
+    position: fixed;
+    top: 0;
+    left: 4px;
+}
+.top-center{
+    left:333px;
+}
+.page-taxonomy h1#page-title{
+    display: none;
 }

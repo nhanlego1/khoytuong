@@ -140,7 +140,7 @@
                     var _nid = $(this).attr('data');
                     $(this).click(function () {
                         $('.comment-post-form-' + _nid).show();
-                        $(".view-news-article .comment-post-s-"+_nid).show();
+                        $(".view-news-article .comment-post-s-" + _nid).show();
                         return false;
                     });
                 });
@@ -222,32 +222,55 @@
             });
 
 
-              //register, login
+            //register, login
 
-            $(".register-action a").click(function(){
-               $(".block-user-login").hide();
+            $(".register-action a").click(function () {
+                $(".block-user-login").hide();
                 $(".block-idea-custom-idea-register-user").show();
                 return false;
             });
 
-            $(".login-action a").click(function(){
+            $(".login-action a").click(function () {
                 $(".block-user-login").show();
                 $(".block-idea-custom-idea-register-user").hide();
                 return false;
             });
             //click login
-            $(".post_bottom").click(function(){
+            $(".post_bottom").click(function () {
                 $(".post_bottom_login").click();
             });
 
             //close share dislog
-            $("#share-buttons a").each(function(){
-               $(this).click(function(){
-                   $.fn.colorbox.close();
-               });
+            $("#share-buttons a").each(function () {
+                $(this).click(function () {
+                    $.fn.colorbox.close();
+                });
             });
 
+            //set fixed position
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() > 60) {
+                    //front
+                    $(".front .sidebar-second").addClass("top-right-fixed");
+                    $(".front .sidebar-first").addClass("top-left-fixed");
+                    $(".front .main.columns").addClass("top-center");
+                    //taxonomy
+                    $(".page-taxonomy .sidebar-second").addClass("top-right-fixed");
+                    $(".page-taxonomy .sidebar-first").addClass("top-left-fixed");
+                    $(".page-taxonomy .main.columns").addClass("top-center");
+                }else{
+                    //front
+                    $(".front .sidebar-second").removeClass("top-right-fixed");
+                    $(".front .sidebar-first").removeClass("top-left-fixed");
+                    $(".front .main.columns").removeClass("top-center");
+                    //taxonomy
+                    $(".page-taxonomy .sidebar-second").removeClass("top-right-fixed");
+                    $(".page-taxonomy .sidebar-first").removeClass("top-left-fixed");
+                    $(".page-taxonomy .main.columns").removeClass("top-center");
+                }
+            });
 
         }
     };
-})(jQuery);
+})
+(jQuery);
