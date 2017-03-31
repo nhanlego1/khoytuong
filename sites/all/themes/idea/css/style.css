@@ -1106,7 +1106,7 @@ h2.block-title {
 }
 
 .amazingcarousel-title a{
-    color: #999;
+    color: #666;
 }
 #amazingcarousel-2 .amazingcarousel-title {
     text-align: left;
@@ -1136,7 +1136,7 @@ ul.menu{
 ul.menu li{
     float: left;
     height: 20px;
-    padding: 5px 20px 5px 100px;
+    padding: 5px 15px 5px 80px;
     list-style: none;
 }
 ul.menu li a{
@@ -1212,4 +1212,51 @@ ul.menu li a{
 }
 .page-taxonomy h1#page-title{
     display: none;
+}
+footer{
+    display: none;
+}
+.short-desc-detail{
+    font-style: italic;
+}
+#search-idea{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
+#search-idea .search-google{
+    width: 60%;
+}
+#search-idea .submit-search{
+    width: 80px;
+    position: absolute;
+    border-style: solid;
+    border-width: 0;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.25rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    border-radius: 0;
+    display: inline-block;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: #b9b9b9;
+    border-color: #007095;
+    color: #FFFFFF;
+    transition: background-color 300ms ease-out;
 }

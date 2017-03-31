@@ -122,7 +122,7 @@
           </aside>
       <?php endif; ?>
     <!-- .l-main region -->
-    <div class="<?php print $main_grid; ?> main columns">
+    <div data="<?php print arg(2) ?>" class="<?php print $main_grid; ?> main columns ">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlight panel callout">
           <?php print render($page['highlighted']); ?>

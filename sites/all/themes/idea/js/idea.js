@@ -12,6 +12,7 @@
                 clearTimeout(timerScrollfront);
 
                 timerScrollfront = setTimeout(function () {
+                    //front
                     if ($(".front footer").length > 0) {
                         $(".idea-loading").show();
                         if (!isWorking) {
@@ -21,6 +22,35 @@
                                 var num = number_li / 5;
                                 // var data_ = $(".loading-view").attr('data');
                                 $.post('/frontpage/pager', {pager: num})
+                                    .done(function (data) {
+                                        if (data != 'ko') {
+                                            $(".idea-loading").hide();
+                                            $(".view-news-article").append(data);
+
+                                            _InitAction();
+
+                                        } else {
+                                            $(".idea-loading").remove();
+                                        }
+                                        isWorking = false;
+                                    })
+                                    .fail(function () {
+                                        //alert( "error" );
+                                    });
+                            }
+                        }
+                    }
+                    //taxonomy
+                    if ($(".page-taxonomy footer").length > 0) {
+                        $(".idea-loading").show();
+                        if (!isWorking) {
+                            if ($(window).scrollTop() > $(".page-taxonomy footer").offset().top - 800) {
+                                isWorking = true;
+                                var number_li = $(".view-news-article div.article-ideas").length;
+                                var num = number_li / 5;
+                                var tid = $(".l-main .columns.top-center").attr('data');
+                                // var data_ = $(".loading-view").attr('data');
+                                $.post('/cate/pager', {pager: num, tid : tid})
                                     .done(function (data) {
                                         if (data != 'ko') {
                                             $(".idea-loading").hide();
@@ -268,6 +298,14 @@
                     $(".page-taxonomy .sidebar-first").removeClass("top-left-fixed");
                     $(".page-taxonomy .main.columns").removeClass("top-center");
                 }
+            });
+            //search
+            $(".idea-search-icon a").click(function(){
+               if($("#search-idea").hasClass('hide')){
+                   $("#search-idea").removeClass('hide');
+               }else{
+                   $("#search-idea").addClass('hide');
+               }
             });
 
         }

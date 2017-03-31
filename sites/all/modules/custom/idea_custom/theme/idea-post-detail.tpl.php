@@ -20,6 +20,7 @@ $account = user_load($node->uid);
     </div>
     <div class="clearfix"></div>
     <div class="post-desc">
+        <p class="short-desc-detail"><?php print $node->field_short_desc[LANGUAGE_NONE][0]['value'] ?></p>
         <?php print $node->body[LANGUAGE_NONE][0]['value'] ?>
     </div>
     <div class="clearfix"></div>

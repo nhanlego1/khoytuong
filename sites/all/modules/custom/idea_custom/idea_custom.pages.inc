@@ -6,7 +6,8 @@
  * Date: 3/3/17
  * Time: 11:28 PM
  */
-function idea_custom_frontpage() {
+function idea_custom_frontpage($cate = null)
+{
     $nodes = idea_get_article($start = 0, $end = 5);
     return theme('idea_frontpage', array('nodes' => $nodes));
 }
@@ -14,7 +15,8 @@ function idea_custom_frontpage() {
 /**
  * implement query node
  */
-function idea_get_article($start = 0, $end = 5) {
+function idea_get_article($start = 0, $end = 5)
+{
     global $user;
 
     $data = array();
@@ -58,7 +60,8 @@ function idea_get_article($start = 0, $end = 5) {
 /**
  * Implement get more article
  */
-function idea_custom_article_more($pagesize = 5) {
+function idea_custom_article_more($pagesize = 5)
+{
     $pager = 0;
     if (isset($_POST['pager'])) {
         $pager = $_POST['pager'] * $pagesize;
@@ -76,7 +79,8 @@ function idea_custom_article_more($pagesize = 5) {
 /**
  * comment post ajax
  */
-function idea_custom_comment() {
+function idea_custom_comment()
+{
     global $user;
     $data = $_POST;
     $node = node_load($data['nid']);
@@ -120,7 +124,8 @@ function idea_custom_comment() {
 /**
  * Function get all comment
  */
-function idea_custom_comment_get() {
+function idea_custom_comment_get()
+{
     $nid = $_POST['nid'];
     $node = node_load($nid);
     $query = db_select('comment', 'c');
@@ -144,7 +149,8 @@ function idea_custom_comment_get() {
 /**
  * Like action
  */
-function idea_custom_like_post_action() {
+function idea_custom_like_post_action()
+{
     global $user;
     $nid = $_POST['nid'];
     idea_custom_like_post($nid);
@@ -153,7 +159,8 @@ function idea_custom_like_post_action() {
 /**
  * Save post action
  */
-function idea_custom_save_post_action() {
+function idea_custom_save_post_action()
+{
     $nid = $_POST['nid'];
     idea_custom_save_post($nid);
 }
@@ -161,15 +168,17 @@ function idea_custom_save_post_action() {
 /**
  * share popup function
  */
-function idea_custom_share_post_action($node){
-    print render(theme('idea_share_post',array('node'=>$node)));
+function idea_custom_share_post_action($node)
+{
+    print render(theme('idea_share_post', array('node' => $node)));
     drupal_exit();
 }
 
 /**
  * function login block
  */
-function idea_custom_login(){
+function idea_custom_login()
+{
     $form = drupal_get_form('user_login_block');
     print render($form);
     drupal_exit();
@@ -178,12 +187,25 @@ function idea_custom_login(){
 /**
  * form post idea
  */
-function idea_custom_post_idea(){
+function idea_custom_post_idea()
+{
     module_load_include('inc', 'node', 'node.pages');
     $node_form = new stdClass;
     $node_form->type = 'idea';
     $node_form->language = LANGUAGE_NONE;
-    $form = drupal_get_form('idea_node_form',$node_form);
+    $form = drupal_get_form('idea_node_form', $node_form);
     print drupal_render($form);
     drupal_exit();
+}
+
+/**
+ * Search google
+ */
+function idea_custom_search()
+{
+    if (!empty($_POST['keyword'])) {
+        drupal_goto('search/gss/' . $_POST['keyword']);
+    } else {
+        drupal_goto('<front>');
+    }
 }

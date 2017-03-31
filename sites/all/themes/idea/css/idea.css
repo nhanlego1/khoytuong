@@ -984,7 +984,6 @@ button,
     padding-right: 2rem;
     padding-bottom: 1.0625rem;
     padding-left: 2rem;
-    font-size: 1rem;
     background-color: #008CBA;
     border-color: #007095;
     color: #FFFFFF;
@@ -2798,7 +2797,6 @@ form .row textarea.columns {
 }
 
 label {
-    font-size: 0.875rem;
     color: #4d4d4d;
     cursor: pointer;
     display: block;
@@ -7177,7 +7175,7 @@ h6 small {
 }
 
 h1 {
-    font-size: 2.125rem
+    font-size: 1.125rem
 }
 
 h2 {
@@ -7401,7 +7399,7 @@ blockquote p {
         line-height: 1.4
     }
     h1 {
-        font-size: 2.75rem
+        font-size: 1.75rem
     }
     h2 {
         font-size: 2.3125rem

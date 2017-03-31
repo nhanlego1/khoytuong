@@ -21,7 +21,7 @@
            <?php isset($account->field_full_name[LANGUAGE_NONE]) ? print $account->field_full_name[LANGUAGE_NONE][0]['value'] : $account->name; ?>
           </span>
             <span class="point-name">
-              1200
+              <!--diem so-->
           </span>
         </div>
         <a href="<?php print url('user/'.$account->uid.'/edit',array('query'=>array('destination'=>'frontpage')));?>">

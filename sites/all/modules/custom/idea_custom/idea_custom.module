@@ -10,6 +10,7 @@
  * @return array
  * Implement hook_menu()
  */
+module_load_include('inc','idea_custom','pages');
 function idea_custom_menu()
 {
     $items = array();
@@ -24,6 +25,10 @@ function idea_custom_menu()
         'page callback' => 'idea_custom_article_more',
         'access callback' => TRUE,
         'file' => 'idea_custom.pages.inc',
+    );
+    $items['cate/pager'] = array(
+        'page callback' => 'idea_custom_article_cate_more',
+        'access callback' => TRUE,
     );
     $items['frontpage'] = array(
         'title' => 'Kho ý tưởng',
@@ -77,6 +82,12 @@ function idea_custom_menu()
 
     $items['idea/post/idea'] = array(
         'page callback' => 'idea_custom_post_idea',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+    $items['idea/search'] = array(
+        'page callback' => 'idea_custom_search',
         'access callback' => TRUE,
         'type' => MENU_LOCAL_ACTION,
         'file' => 'idea_custom.pages.inc',
@@ -160,6 +171,11 @@ function idea_custom_theme()
         'path' => drupal_get_path('module', 'idea_custom') . '/theme',
         'template' => 'idea-share-button',
     );
+    $items['idea_search'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-search',
+    );
 
     return $items;
 }
@@ -203,6 +219,12 @@ function idea_custom_block_info()
     $blocks['idea_category_block'] = array(
         'info' => t('Category block'),
     );
+    $blocks['idea_category_block_item'] = array(
+        'info' => t('Category block item'),
+    );
+    $blocks['idea_search'] = array(
+        'info' => t('Idea search'),
+    );
 
     return $blocks;
 }
@@ -237,6 +259,9 @@ function idea_custom_block_view($delta = '')
         case 'post_form' :
             $block['content'] = theme('idea_post_form');
             break;
+        case 'idea_search' :
+            $block['content'] = theme('idea_search');
+            break;
         case 'post_detail' :
             $block['content'] = theme('idea_post_detail');
             break;
@@ -260,6 +285,13 @@ function idea_custom_block_view($delta = '')
                 $cate = arg(2);
             }
             $block['content'] = idea_custom_front_top($cate);
+            break;
+        case 'idea_category_block_item' :
+            $cate = null;
+            if(arg(0)=='taxonomy' && arg(1)=='term' && arg(2) != null){
+                $cate = arg(2);
+            }
+            $block['content'] = idea_custom_frontpage_cate($cate);
             break;
         case 'idea_custom_button' :
             $class='cboxElement post_bottom_login';
@@ -802,30 +834,34 @@ function idea_custom_user_presave(&$edit, $account, $category)
 /**
  * implement query node
  */
-function idea_get_article_cate($start = 0, $end = 5) {
+function idea_get_article_cate($start = 0, $end = 5, $tid = null) {
     global $user;
-
+    if(arg(0)=='taxonomy' && arg(1)=='term'){
+        $tid = arg(2);
+    }
     $data = array();
     $query = db_select('node', 'n');
     $query->fields('n');
+    $query->join('taxonomy_index','ti','ti.nid = n.nid');
 
     if ($user->uid > 0) {
         if (in_array('admin', $user->roles) || in_array('administrator', $user->roles)) {
             $query->condition(db_or()
-                ->condition('status', 1)
-                ->condition('status', 0)
+                ->condition('n.status', 1)
+                ->condition('n.status', 0)
             );
         } else {
             $query->condition(db_or()
-                ->condition('uid', $user->uid)
-                ->condition('status', 1)
+                ->condition('n.uid', $user->uid)
+                ->condition('n.status', 1)
             );
         }
     } else {
-        $query->condition('status', NODE_PUBLISHED);
+        $query->condition('n.status', NODE_PUBLISHED);
     }
-    $query->condition('type', 'idea');
-    $query->orderBy('created', 'DESC');
+    $query->condition('n.type', 'idea');
+    $query->condition('ti.tid', $tid);
+    $query->orderBy('n.created', 'DESC');
     if ($start == 0) {
         $start = 1;
     } else {
@@ -868,4 +904,41 @@ function idea_custom_article_cate_more($pagesize = 5) {
 function idea_custom_frontpage_cate($tid) {
     $nodes = idea_get_article_cate($start = 0, $end = 5, $tid);
     return theme('idea_frontpage', array('nodes' => $nodes));
+}
+
+/**
+ * Bai viet duoc xem nhieu nhat trong thang
+ */
+function _view_most_month(){
+    $current_date = time();
+
+    $month_date = '';
+}
+
+/**
+ * @param $view
+ * @param $query
+ * Implement hook_views_query_alter
+ */
+function idea_custom_views_query_alter(&$view, &$query) {
+    if($view->name === 'article_popular') {
+
+        if(isset($_GET['sort_by']) && $_GET['sort_by']=='php'){
+            $current_date = time();
+            $last_month = $current_date - (30*84600);
+            $query->where[1]['conditions'][2] = array('field'=>"node.created BETWEEN ".$last_month." AND ".$current_date,"value"=>array(),"operator"=>"formula");
+            $view->query->orderby[0]['field'] = "field_data_field_like_field_like_value";
+            $view->query->orderby[0]['direction'] = "DESC";
+        }
+
+        if(isset($_GET['sort_by']) && $_GET['sort_by']=='php_1'){
+            $current_date = time();
+            $last_month = $current_date - (30*84600);
+            $query->where[1]['conditions'][2] = array('field'=>"node.created BETWEEN ".$last_month." AND ".$current_date,"value"=>array(),"operator"=>"formula");
+            $view->query->orderby[0]['field'] = "field_data_field_views_field_views_value";
+            $view->query->orderby[0]['direction'] = "DESC";
+        }
+
+
+    }
 }
