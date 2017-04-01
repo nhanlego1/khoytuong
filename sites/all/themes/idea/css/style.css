@@ -1260,3 +1260,6 @@ footer{
     color: #FFFFFF;
     transition: background-color 300ms ease-out;
 }
+ul.amazingcarousel-list li{
+    height: 190px;
+}
