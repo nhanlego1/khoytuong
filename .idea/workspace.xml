@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b76181a-9510-4f32-acc2-d8e8b280d108" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
     </list>
     <ignored path="idea.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="1202" column="13" selection-start-line="1202" selection-start-column="13" selection-end-line="1202" selection-end-column="13" />
+            <state relative-caret-position="165">
+              <caret line="1227" column="29" selection-start-line="1227" selection-start-column="29" selection-end-line="1227" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="293" column="49" selection-start-line="293" selection-start-column="44" selection-end-line="293" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -143,11 +153,11 @@
         <option value="$PROJECT_DIR$/sites/all/themes/idea/css/idea.css" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/templates/page--taxonomy.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc" />
-        <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-search.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
       </list>
     </option>
   </component>
@@ -627,12 +637,12 @@
       <workItem from="1490672330398" duration="3580000" />
       <workItem from="1490706924072" duration="68000" />
       <workItem from="1490925057120" duration="4619000" />
-      <workItem from="1491050059835" duration="2635000" />
+      <workItem from="1491050059835" duration="2822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122295000" />
+    <option name="totallyTimeSpent" value="122482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="0" />
@@ -867,6 +877,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" column="146" selection-start-line="47" selection-start-column="146" selection-end-line="47" selection-end-column="146" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -944,6 +955,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1185">
           <caret line="79" column="91" selection-start-line="78" selection-start-column="0" selection-end-line="79" selection-end-column="91" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -999,14 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="262" column="50" selection-start-line="262" selection-start-column="50" selection-end-line="262" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-search.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1035,8 +1039,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="1202" column="13" selection-start-line="1202" selection-start-column="13" selection-end-line="1202" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="1227" column="29" selection-start-line="1227" selection-start-column="29" selection-end-line="1227" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="293" column="49" selection-start-line="293" selection-start-column="44" selection-end-line="293" selection-end-column="49" />
           <folding />
         </state>
       </provider>

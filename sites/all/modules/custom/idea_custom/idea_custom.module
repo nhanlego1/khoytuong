@@ -614,6 +614,7 @@ function idea_custom_front_top($cate = null)
 
     if ($result) {
         $node = node_load($result->nid);
+        idea_custom_view_post($result->nid);
         return theme('idea_frontpage_top', array('node' => $node));
     } else {
         return false;
