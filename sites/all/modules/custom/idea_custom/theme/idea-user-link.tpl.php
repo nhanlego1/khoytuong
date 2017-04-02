@@ -20,7 +20,7 @@
                 <?php else: ?>
                     <img src="/sites/all/themes/idea/images/default-avatar.png"/>
                 <?php endif; ?>
-                <?php if(privatemsg_unread_count() > 0): ?><span class="notification-small"><?php print privatemsg_unread_count() ?></span><?php endif; ?>
+                <?php if(privatemsg_unread_count() && privatemsg_unread_count() > 0): ?><span class="notification-small"><?php print privatemsg_unread_count() ?></span><?php endif; ?>
                 <span class="user-link-title-name">
            <?php isset($account->field_full_name[LANGUAGE_NONE]) ? print $account->field_full_name[LANGUAGE_NONE][0]['value'] : $account->name; ?>
           </span>
