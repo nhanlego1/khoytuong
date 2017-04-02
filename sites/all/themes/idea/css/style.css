@@ -1217,6 +1217,11 @@ ul.menu li a{
     position: fixed;
     top: -50px;
 }
+@media (min-width:1290px)  {
+    .top-center-fixed{
+        left:210px;
+    }
+}
 .page-taxonomy h1#page-title{
     display: none;
 }
