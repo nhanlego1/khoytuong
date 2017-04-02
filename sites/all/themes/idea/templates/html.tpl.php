@@ -83,6 +83,7 @@
     <?php endif; ?>
 
     <?php if(arg(0)=='user' && arg(1)=='register'): ?>
+        <meta property="og:title" content="Đăng ký tài khoản trên khoytuong.vn"/>
         <meta property="og:url" content="<?php print url('user/register', array('absolute' => true)) ?>"/>
         <meta property="og:image"
               content="<?php print url('sites/all/themes/idea/images/avatar.jpg',array('absolute'=>true)) ?>"/>
