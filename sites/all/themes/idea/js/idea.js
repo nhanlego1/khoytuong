@@ -288,6 +288,9 @@
                     $(".page-taxonomy .sidebar-second").addClass("top-right-fixed");
                     $(".page-taxonomy .sidebar-first").addClass("top-left-fixed");
                     $(".page-taxonomy .main.columns").addClass("top-center");
+                    //node detail
+                    $(".node-type-idea .sidebar-first").addClass("top-left-fixed");
+                    $(".node-type-idea .main.columns").addClass("top-center-fixed");
                 }else{
                     //front
                     $(".front .sidebar-second").removeClass("top-right-fixed");
@@ -297,6 +300,9 @@
                     $(".page-taxonomy .sidebar-second").removeClass("top-right-fixed");
                     $(".page-taxonomy .sidebar-first").removeClass("top-left-fixed");
                     $(".page-taxonomy .main.columns").removeClass("top-center");
+                    //node detail
+                    $(".node-type-idea .sidebar-first").removeClass("top-left-fixed");
+                    $(".node-type-idea .main.columns").removeClass("top-center-fixed");
                 }
             });
             //search
