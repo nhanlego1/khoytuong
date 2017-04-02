@@ -1199,12 +1199,12 @@ ul.menu li a{
 }
 .top-right-fixed {
     position: fixed;
-    top: 0;
+    top: 70px;
     left: 799px;
 }
 .top-left-fixed {
     position: fixed;
-    top: 0;
+    top: 70px;
 }
 .row.l-main{
     position: relative;
@@ -1216,6 +1216,13 @@ ul.menu li a{
     left:168px;
     position: fixed;
     top: -50px;
+}
+.header-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
 }
 @media (min-width:1290px)  {
     .top-center-fixed{
@@ -1280,4 +1287,32 @@ ul.amazingcarousel-list li{
 }
 #amazingcarousel-2 .amazingcarousel-item-container {
     height: 190px;
+}
+.idea-search-icon a:hover{
+    color: transparent;
+}
+.notification{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: red;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    padding-top: 1px;
+    top: 17px;
+    right: 209px;
+}
+.notification-small{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    top: -5px;
+    line-height: 13px;
+    left: 21px;
 }

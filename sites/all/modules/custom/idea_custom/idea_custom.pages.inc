@@ -84,7 +84,7 @@ function idea_custom_comment()
     global $user;
     $data = $_POST;
     $node = node_load($data['nid']);
-    if ($node->status == 0) {
+    if ($user->status == 0) {
         print 'Access denied';
         drupal_exit();
     }
@@ -208,4 +208,55 @@ function idea_custom_search()
     } else {
         drupal_goto('<front>');
     }
+}
+
+/**
+ * function get user post
+ */
+function idea_custom_user_post()
+{
+    global $user;
+    $query = db_select('node', 'n');
+    $query->fields('n');
+    $query->condition('type', 'idea');
+    $query->condition('uid', $user->uid);
+    $query->orderBy('created', 'desc');
+    $result = $query->execute()->fetchAll();
+    $data = array();
+    if ($result) {
+        foreach ($result as $r) {
+            $data[] = node_load($r->nid);
+        }
+        print (render(theme('idea_frontpage_pager', array('nodes' => $data))));
+
+    } else {
+        print 'ko';
+    }
+    drupal_exit();
+}
+
+/**
+ * user save
+ */
+function idea_custom_user_save()
+{
+    global $user;
+    $query = db_select('node', 'n');
+    $query->join('idea_save','ids','ids.nid=n.nid');
+    $query->fields('n');
+    $query->condition('n.type', 'idea');
+    $query->condition('ids.uid', $user->uid);
+    $query->orderBy('n.created', 'desc');
+    $result = $query->execute()->fetchAll();
+    $data = array();
+    if ($result) {
+        foreach ($result as $r) {
+            $data[] = node_load($r->nid);
+        }
+        print (render(theme('idea_frontpage_pager', array('nodes' => $data))));
+
+    } else {
+        print 'ko';
+    }
+    drupal_exit();
 }

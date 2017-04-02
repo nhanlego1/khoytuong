@@ -92,6 +92,18 @@ function idea_custom_menu()
         'type' => MENU_LOCAL_ACTION,
         'file' => 'idea_custom.pages.inc',
     );
+    $items['idea/user/post'] = array(
+        'page callback' => 'idea_custom_user_post',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+    $items['idea/user/save'] = array(
+        'page callback' => 'idea_custom_user_save',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
 
     return $items;
 }
@@ -829,6 +841,13 @@ function idea_custom_user_presave(&$edit, $account, $category)
     if ($result) {
         $edit['field_full_name'][LANGUAGE_NONE][0]['value'] = $result->name;
     }
+    if(isset($_GET['token']) && !empty($_GET['token'])){
+        $code = base64_decode($_GET['token']);
+        $code = explode('|',$code);
+        $uid = $code[1];
+        //update point for user
+    }
+
 
 }
 
@@ -943,3 +962,7 @@ function idea_custom_views_query_alter(&$view, &$query) {
 
     }
 }
+/**
+ * count message
+ */
+
