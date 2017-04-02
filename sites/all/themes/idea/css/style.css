@@ -1200,12 +1200,14 @@ ul.menu li a{
 .top-right-fixed {
     position: fixed;
     top: 0;
-    right: 4px;
+    left: 842px;
 }
 .top-left-fixed {
     position: fixed;
     top: 0;
-    left: 4px;
+}
+.row.l-main{
+    position: relative;
 }
 .top-center{
     left:333px;
