@@ -436,7 +436,7 @@ function idea_custom_view_post($nid)
 {
     global $user;
     $node = node_load($nid);
-    if ($node && $node->status == NODE_PUBLISHED && $user->status == NODE_PUBLISHED && $node->type=='idea') {
+    if ($node && $node->status == NODE_PUBLISHED  && $node->type=='idea') {
         db_insert('idea_views')// Table name no longer needs {}
         ->fields(array(
             'uid' => $user->uid,
