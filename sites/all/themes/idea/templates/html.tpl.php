@@ -81,6 +81,11 @@
         <meta property="og:description"
               content="<?php print $node->field_short_desc[LANGUAGE_NONE][0]['value'] ?>"/>
     <?php endif; ?>
+
+    <?php if(arg(0)=='user' && arg(1)=='register'): ?>
+        <meta property="og:image"
+              content="<?php print url('sites/all/themes/idea/images/avatar.jpg',array('absolute'=>true)) ?>"/>
+    <?php endif; ?>
     <!--end open graph-->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Quicksand');

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b76181a-9510-4f32-acc2-d8e8b280d108" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php" afterPath="$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php" />
     </list>
     <ignored path="idea.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="true">
+      <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="196">
               <caret line="438" column="49" selection-start-line="438" selection-start-column="49" selection-end-line="438" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="html.tpl.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="84" column="54" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -144,7 +154,6 @@
         <option value="$PROJECT_DIR$/sites/all/themes/idea/templates/views/views-view-fields--article-popular--block.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-pager.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/contrib/social_login/social_login_core.module" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/templates/node/node--idea.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/idea.info" />
@@ -158,6 +167,7 @@
         <option value="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
+        <option value="$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php" />
       </list>
     </option>
   </component>
@@ -637,12 +647,12 @@
       <workItem from="1490672330398" duration="3580000" />
       <workItem from="1490706924072" duration="68000" />
       <workItem from="1490925057120" duration="4619000" />
-      <workItem from="1491050059835" duration="2921000" />
+      <workItem from="1491050059835" duration="3584000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122581000" />
+    <option name="totallyTimeSpent" value="123244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="0" />
@@ -923,13 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="57" column="68" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/js/initcarousel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-500">
@@ -970,6 +973,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1965">
           <caret line="131" column="31" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,6 +1004,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,6 +1054,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="438" column="49" selection-start-line="438" selection-start-column="49" selection-end-line="438" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/templates/html.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="84" column="54" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
           <folding />
         </state>
       </provider>
