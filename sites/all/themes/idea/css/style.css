@@ -1200,7 +1200,7 @@ ul.menu li a{
 .top-right-fixed {
     position: fixed;
     top: 0;
-    left: 842px;
+    left: 799px;
 }
 .top-left-fixed {
     position: fixed;
@@ -1220,6 +1220,9 @@ ul.menu li a{
 @media (min-width:1290px)  {
     .top-center-fixed{
         left:210px;
+    }
+    .top-right-fixed {
+        left: 842px;
     }
 }
 .page-taxonomy h1#page-title{
