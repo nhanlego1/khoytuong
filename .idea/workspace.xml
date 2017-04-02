@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b76181a-9510-4f32-acc2-d8e8b280d108" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.pages.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-user-link.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-user-link.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" afterPath="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
     </list>
     <ignored path="idea.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,17 +23,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="1289" column="1" selection-start-line="1289" selection-start-column="1" selection-end-line="1289" selection-end-column="1" />
+            <state relative-caret-position="525">
+              <caret line="1319" column="23" selection-start-line="1319" selection-start-column="23" selection-end-line="1319" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="true">
+      <file leaf-file-name="idea_custom.module" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
@@ -142,8 +136,8 @@
         <option value="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-user-link.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
+        <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
       </list>
     </option>
   </component>
@@ -679,12 +673,12 @@
       <workItem from="1490672330398" duration="3580000" />
       <workItem from="1490706924072" duration="68000" />
       <workItem from="1490925057120" duration="4619000" />
-      <workItem from="1491050059835" duration="14828000" />
+      <workItem from="1491050059835" duration="15112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134488000" />
+    <option name="totallyTimeSpent" value="134772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="0" />
@@ -1098,14 +1092,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="1289" column="1" selection-start-line="1289" selection-start-column="1" selection-end-line="1289" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-account-info.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1120,6 +1106,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="847" column="31" selection-start-line="847" selection-start-column="31" selection-end-line="847" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="1319" column="23" selection-start-line="1319" selection-start-column="23" selection-end-line="1319" selection-end-column="23" />
           <folding />
         </state>
       </provider>
