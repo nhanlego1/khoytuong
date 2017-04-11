@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b76181a-9510-4f32-acc2-d8e8b280d108" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php" afterPath="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
     </list>
     <ignored path="idea.iws" />
@@ -24,21 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
+            <state relative-caret-position="528">
+              <caret line="1361" column="1" selection-start-line="1361" selection-start-column="1" selection-end-line="1361" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="idea-frontpage-top.tpl.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="idea-frontpage-top.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -179,8 +178,8 @@
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea_custom.module" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/idea.admin.inc" />
         <option value="$PROJECT_DIR$/sites/all/themes/idea/js/idea.js" />
-        <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
         <option value="$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/themes/idea/css/style.css" />
       </list>
     </option>
   </component>
@@ -537,12 +536,12 @@
       <workItem from="1490925057120" duration="4619000" />
       <workItem from="1491050059835" duration="15959000" />
       <workItem from="1491755539052" duration="2884000" />
-      <workItem from="1491876076202" duration="3603000" />
+      <workItem from="1491876076202" duration="3813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142106000" />
+    <option name="totallyTimeSpent" value="142316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
@@ -969,18 +968,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
+        <state relative-caret-position="375">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/idea_custom/theme/idea-frontpage-top.tpl.php">
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/idea/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="1361" column="1" selection-start-line="1361" selection-start-column="1" selection-end-line="1361" selection-end-column="1" />
           <folding />
         </state>
       </provider>
