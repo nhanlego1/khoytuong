@@ -117,7 +117,5 @@ $current_user = user_load($user->uid);
 
 
 <?php endif; ?>
-<div class="ads-front-center">
-    <img src="/sites/all/themes/idea/images/banner-node-right.png">
-</div>
+
 <div class="clearfix"></div>

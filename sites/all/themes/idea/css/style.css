@@ -76,7 +76,7 @@ button#edit-submit {
 }
 
 .l-header {
-    background: #333333;
+    background: rgba(9, 9, 9, 0.7);
     max-height: 45px;
     margin-bottom: 15px;
     position: fixed;
