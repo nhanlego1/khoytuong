@@ -52,7 +52,7 @@ button#edit-submit {
     margin-left: 10px;
     position: absolute;
     left: 24%;
-    top: 60px;
+    top: 50px;
 }
 
 .idea .sidebar-second {
@@ -62,7 +62,7 @@ button#edit-submit {
     padding-right: 5px;
     position: fixed;
     right: 5px;
-    top: 60px;
+    top: 50px;
 }
 
 .idea .sidebar-first {
@@ -71,7 +71,7 @@ button#edit-submit {
     padding-left: 5px;
     padding-right: 5px;
     position: fixed;
-    top: 60px;
+    top: 50px;
     left: 5px;
 }
 
@@ -461,7 +461,7 @@ ul.pager--infinite-scroll li {
     padding-right: 5px;
     margin-left: 3px;
     position: fixed;
-    top: 60px;
+    top: 50px;
     left: 2%;
 
 }
@@ -472,7 +472,7 @@ ul.pager--infinite-scroll li {
     padding-left: 5px;
     padding-right: 5px;
     position: absolute;
-    top: 60px;
+    top: 50px;
     right: 0px;
 }
 
