@@ -45,30 +45,42 @@ button#edit-submit {
 }
 
 .idea .medium-6.main {
-    max-width: 461px;
-    width: 461px;
+    max-width: 468px;
+    width: 468px;
     padding-left: 5px;
     padding-right: 5px;
+    margin-left: 10px;
+    position: absolute;
+    left: 24%;
+    top: 60px;
 }
 
 .idea .sidebar-second {
-    max-width: 461px;
-    width: 461px;
+    max-width: 468px;
+    width: 468px;
     padding-left: 5px;
     padding-right: 5px;
+    position: fixed;
+    right: 5px;
+    top: 60px;
 }
 
 .idea .sidebar-first {
-    max-width: 333px;
-    width: 333px;
+    max-width: 300px;
+    width: 300px;
     padding-left: 5px;
     padding-right: 5px;
+    position: fixed;
+    top: 60px;
 }
 
 .l-header {
     background: #333333;
     max-height: 45px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 .block-idea-custom-idea-search-icon {
@@ -277,7 +289,7 @@ ul.account-detail li a span {
     height: 34px;
     background: url(../images/edit-icon.png) no-repeat center;
     position: absolute;
-    top: 35px;
+    top: 6px;
     right: 10px;
 }
 
@@ -288,6 +300,7 @@ ul.account-detail li a span {
     margin-bottom: 20px;
     padding-bottom: 20px;
     /*float: left;*/
+    height: 153px;
 }
 
 .view-news-article-top .article-ideas {
@@ -373,7 +386,7 @@ ul.pager--infinite-scroll li {
 .popular-item .img-popular {
     max-width: 190px;
     margin-left: 20px;
-    margin-top: 25px;
+    margin-top: 20px;
     float: left;
 }
 
@@ -381,11 +394,11 @@ ul.pager--infinite-scroll li {
     float: left;
     margin-left: 20px;
     width: 48%;
-    padding-top: 30px;
+    padding-top: 12px;
 }
 
 .view-id-article_popular .views-row-last {
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
 }
 
 .popular-item .img-popular iframe {
@@ -445,6 +458,7 @@ ul.pager--infinite-scroll li {
     width: 600px;
     padding-left: 5px;
     padding-right: 5px;
+    margin-left: 3px;
 }
 
 .node-type-idea .sidebar-second {
@@ -1216,6 +1230,7 @@ ul.menu li a{
     left:168px;
     position: fixed;
     top: -50px;
+    margin-left: 0px!important;
 }
 .header-fixed{
     position: fixed;
@@ -1301,7 +1316,7 @@ ul.amazingcarousel-list li{
     text-align: center;
     padding-top: 1px;
     top: 17px;
-    right: 209px;
+    right: 180px;
 }
 .notification-small{
     position: absolute;

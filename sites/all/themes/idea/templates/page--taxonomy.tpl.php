@@ -117,12 +117,12 @@
   <main role="main" class="row l-main">
 
       <?php if (!empty($page['sidebar_first'])): ?>
-          <aside role="complementary" class="<?php print $sidebar_first_grid; ?> sidebar-first columns sidebar">
+          <aside id="sidebar-left" role="complementary" class="<?php print $sidebar_first_grid; ?> sidebar-first columns sidebar">
               <?php print render($page['sidebar_first']); ?>
           </aside>
       <?php endif; ?>
     <!-- .l-main region -->
-    <div data="<?php print arg(2) ?>" class="<?php print $main_grid; ?> main columns ">
+    <div id="sidebar-main" data="<?php print arg(2) ?>" class="<?php print $main_grid; ?> main columns ">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlight panel callout">
           <?php print render($page['highlighted']); ?>
@@ -156,7 +156,7 @@
 
 
     <?php if (!empty($page['sidebar_second'])): ?>
-      <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
+      <aside id="sidebar-right" role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
         <?php print render($page['sidebar_second']); ?>
       </aside>
     <?php endif; ?>

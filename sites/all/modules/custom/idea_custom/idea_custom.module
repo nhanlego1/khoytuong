@@ -104,8 +104,28 @@ function idea_custom_menu()
         'type' => MENU_LOCAL_ACTION,
         'file' => 'idea_custom.pages.inc',
     );
+    $items['admin/config/content/idea'] = array(
+        'title' => 'Kho Y Tuong Settings ',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('idea_admin'),
+        'access arguments' => array('administer idea'),
+        'file' => 'idea.admin.inc',
+    );
 
     return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function idea_custom_permission()
+{
+    return array(
+        'administer idea' => array(
+            'title' => t('Administer Idea'),
+            'restrict access' => TRUE,
+        ),
+    );
 }
 
 /**
