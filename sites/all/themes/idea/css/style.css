@@ -1231,7 +1231,9 @@ ul.menu li a{
 }
 .row.l-main{
     position: relative;
+    /*top: 52px;*/
 }
+
 .top-center{
     left:333px;
 }

@@ -1419,7 +1419,7 @@ function _insert_temp_table($email, $link, $name, $nickname){
         db_insert('user_profile_tmp') // Table name no longer needs {}
         ->fields(array(
             'email' => $email,
-            'name' => $name,
+            'name' => check_plain($name),
             'link' => $link,
             'nickname'=>$nickname,
         ))
