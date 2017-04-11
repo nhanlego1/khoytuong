@@ -1335,3 +1335,13 @@ ul.amazingcarousel-list li{
 .l-featured{
     margin-bottom: 20px;
 }
+.register-action{
+    display: none;
+}
+#user-login-form .form-submit{
+    background: none;
+    text-decoration: underline;
+    padding-left: 0px;
+    padding-top: 0px;
+    color: #4285f4;
+}
