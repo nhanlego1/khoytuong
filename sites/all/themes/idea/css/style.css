@@ -72,6 +72,7 @@ button#edit-submit {
     padding-right: 5px;
     position: fixed;
     top: 60px;
+    left: 5px;
 }
 
 .l-header {
@@ -398,7 +399,7 @@ ul.pager--infinite-scroll li {
 }
 
 .view-id-article_popular .views-row-last {
-    /*padding-bottom: 20px;*/
+    padding-bottom: 15px;
 }
 
 .popular-item .img-popular iframe {
