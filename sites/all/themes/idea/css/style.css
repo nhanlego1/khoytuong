@@ -455,11 +455,15 @@ ul.pager--infinite-scroll li {
 }
 
 .node-type-idea .medium-6.main {
-    max-width: 600px;
-    width: 600px;
+    max-width: 728px;
+    width: 728px;
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 3px;
+    position: fixed;
+    top: 60px;
+    left: 2%;
+
 }
 
 .node-type-idea .sidebar-second {
@@ -467,6 +471,9 @@ ul.pager--infinite-scroll li {
     width: 490px;
     padding-left: 5px;
     padding-right: 5px;
+    position: absolute;
+    top: 60px;
+    right: 0px;
 }
 
 .node-type-idea .sidebar-first {
@@ -474,6 +481,7 @@ ul.pager--infinite-scroll li {
     width: 160px;
     padding-left: 5px;
     padding-right: 5px;
+    display: none;
 }
 
 .node-idea {
