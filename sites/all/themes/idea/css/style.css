@@ -1360,3 +1360,10 @@ ul.amazingcarousel-list li{
     z-index: 999;
     top: 52px;
 }
+.alert-box.success {
+    background-color: #43AC6A;
+    border-color: #3a945b;
+    color: #FFFFFF;
+    z-index: 999;
+    top: 52px;
+}
