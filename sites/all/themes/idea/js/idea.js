@@ -23,21 +23,21 @@
                                     var num = number_li / 5;
                                     // var data_ = $(".loading-view").attr('data');
                                     $.post('/frontpage/pager', {pager: num})
-                                        .done(function (data) {
-                                            if (data != 'ko') {
-                                                $(".idea-loading").hide();
-                                                $(".view-news-article").append(data);
+                                            .done(function (data) {
+                                                if (data != 'ko') {
+                                                    $(".idea-loading").hide();
+                                                    $(".view-news-article").append(data);
 
-                                                _InitAction();
+                                                    _InitAction();
 
-                                            } else {
-                                                $(".idea-loading").remove();
-                                            }
-                                            isWorking = false;
-                                        })
-                                        .fail(function () {
-                                            //alert( "error" );
-                                        });
+                                                } else {
+                                                    $(".idea-loading").remove();
+                                                }
+                                                isWorking = false;
+                                            })
+                                            .fail(function () {
+                                                //alert( "error" );
+                                            });
                                 }
                             }
                         }
@@ -52,21 +52,21 @@
                                     var tid = $(".l-main .columns.top-center").attr('data');
                                     // var data_ = $(".loading-view").attr('data');
                                     $.post('/cate/pager', {pager: num, tid: tid})
-                                        .done(function (data) {
-                                            if (data != 'ko') {
-                                                $(".idea-loading").hide();
-                                                $(".view-news-article").append(data);
+                                            .done(function (data) {
+                                                if (data != 'ko') {
+                                                    $(".idea-loading").hide();
+                                                    $(".view-news-article").append(data);
 
-                                                _InitAction();
+                                                    _InitAction();
 
-                                            } else {
-                                                $(".idea-loading").remove();
-                                            }
-                                            isWorking = false;
-                                        })
-                                        .fail(function () {
-                                            //alert( "error" );
-                                        });
+                                                } else {
+                                                    $(".idea-loading").remove();
+                                                }
+                                                isWorking = false;
+                                            })
+                                            .fail(function () {
+                                                //alert( "error" );
+                                            });
                                 }
                             }
                         }
@@ -81,25 +81,25 @@
                 $(".view-news-article").html('');
                 $(".view-news-article").addClass('my-post-ready');
                 $.post('/idea/user/post')
-                    .done(function (data) {
-                        if (data != 'ko') {
-                            $(".idea-loading").hide();
-                            $(".view-news-article").append(data);
+                        .done(function (data) {
+                            if (data != 'ko') {
+                                $(".idea-loading").hide();
+                                $(".view-news-article").append(data);
 
-                            _InitAction();
-                            $('html, body').animate({
-                                scrollTop: $(".view-news-article").offset().top - 70
-                            }, 1000);
+                                _InitAction();
+                                $('html, body').animate({
+                                    scrollTop: $(".view-news-article").offset().top - 70
+                                }, 1000);
 
 
-                        } else {
-                            $(".idea-loading").remove();
-                        }
-                        isWorking = false;
-                    })
-                    .fail(function () {
-                        //alert( "error" );
-                    });
+                            } else {
+                                $(".idea-loading").remove();
+                            }
+                            isWorking = false;
+                        })
+                        .fail(function () {
+                            //alert( "error" );
+                        });
             });
 
             //click show action user
@@ -108,25 +108,25 @@
                 $(".view-news-article").html('');
                 $(".view-news-article").addClass('my-post-ready');
                 $.post('/idea/user/save')
-                    .done(function (data) {
-                        if (data != 'ko') {
-                            $(".idea-loading").hide();
-                            $(".view-news-article").append(data);
+                        .done(function (data) {
+                            if (data != 'ko') {
+                                $(".idea-loading").hide();
+                                $(".view-news-article").append(data);
 
-                            _InitAction();
-                            $('html, body').animate({
-                                scrollTop: $(".view-news-article").offset().top - 70
-                            }, 1000);
+                                _InitAction();
+                                $('html, body').animate({
+                                    scrollTop: $(".view-news-article").offset().top - 70
+                                }, 1000);
 
 
-                        } else {
-                            $(".idea-loading").remove();
-                        }
-                        isWorking = false;
-                    })
-                    .fail(function () {
-                        //alert( "error" );
-                    });
+                            } else {
+                                $(".idea-loading").remove();
+                            }
+                            isWorking = false;
+                        })
+                        .fail(function () {
+                            //alert( "error" );
+                        });
             });
 
             //post comment
@@ -150,19 +150,19 @@
                         cid: _cid,
                         comment: _comment
                     })
-                        .done(function (data) {
-                            if (data != 'Access denied') {
-                                $(".comment-text-" + _nid).val('');
-                                $(".comment-items-" + _nid).append(data);
-                                $(".comment-post-form-" + _nid + " .user-comment-name").html('');
-                                _InitAction();
-                            }
-                            return false;
+                            .done(function (data) {
+                                if (data != 'Access denied') {
+                                    $(".comment-text-" + _nid).val('');
+                                    $(".comment-items-" + _nid).append(data);
+                                    $(".comment-post-form-" + _nid + " .user-comment-name").html('');
+                                    _InitAction();
+                                }
+                                return false;
 
-                        })
-                        .fail(function () {
-                            //alert( "error" );
-                        });
+                            })
+                            .fail(function () {
+                                //alert( "error" );
+                            });
                     return false;
                 });
 
@@ -174,18 +174,18 @@
                     $.post("/idea/comment/get", {
                         nid: _nid
                     })
-                        .done(function (data) {
-                            if (data != 'ko') {
-                                $(".comment-items-" + _nid).html(data);
-                                _InitAction();
-                            }
-                            $(".load-more-comment").hide();
-                            return false;
+                            .done(function (data) {
+                                if (data != 'ko') {
+                                    $(".comment-items-" + _nid).html(data);
+                                    _InitAction();
+                                }
+                                $(".load-more-comment").hide();
+                                return false;
 
-                        })
-                        .fail(function () {
-                            //alert( "error" );
-                        });
+                            })
+                            .fail(function () {
+                                //alert( "error" );
+                            });
                     return false;
 
                 });
@@ -248,16 +248,16 @@
                         $.post("/idea/like/post", {
                             nid: _nid
                         })
-                            .done(function (data) {
-                                if (data != 'Access denied') {
-                                    $(".like-post-" + _nid + " i.count").text(data);
-                                }
-                                // return false;
+                                .done(function (data) {
+                                    if (data != 'Access denied') {
+                                        $(".like-post-" + _nid + " i.count").text(data);
+                                    }
+                                    // return false;
 
-                            })
-                            .fail(function () {
-                                //alert( "error" );
-                            });
+                                })
+                                .fail(function () {
+                                    //alert( "error" );
+                                });
                         //  return false;
                     });
                 });
@@ -269,16 +269,16 @@
                         $.post("/idea/save/post", {
                             nid: _nid
                         })
-                            .done(function (data) {
-                                if (data != 'Access denied') {
-                                    $(".save-post-" + _nid + " i.count").text(data);
-                                }
-                                //  return false;
+                                .done(function (data) {
+                                    if (data != 'Access denied') {
+                                        $(".save-post-" + _nid + " i.count").text(data);
+                                    }
+                                    //  return false;
 
-                            })
-                            .fail(function () {
-                                //alert( "error" );
-                            });
+                                })
+                                .fail(function () {
+                                    //alert( "error" );
+                                });
                         // return false;
                     });
                 });
@@ -299,6 +299,7 @@
             $(".ajax-share").colorbox({width: "340px", height: "400px"});
             $(".ajax-like").colorbox({width: "340px", height: "400px"});
             $(".ajax-comment").colorbox({width: "340px", height: "400px"});
+            $(".exchange").colorbox({width: "370px", height: "400px"});
             $(".ajax-save").colorbox({width: "340px", height: "400px"});
             $(".idea-post_ajax").colorbox({width: "460px", height: "600px"});
             $(".user_not_login").colorbox({width: "340px", height: "400px"});
@@ -333,57 +334,6 @@
                     $.fn.colorbox.close();
                 });
             });
-
-            //console.log(getPos(document.getElementById('sidebar-left')));
-            // $(window).bind('mousewheel', function (event) {
-            //     if (event.originalEvent.wheelDelta >= 0) {
-            //         $(".l-header").removeClass("header-fixed");
-            //         //front
-            //         $(".front .sidebar-second").removeClass("top-right-fixed");
-            //         $(".front .sidebar-first").removeClass("top-left-fixed");
-            //         $(".front .main.columns").removeClass("top-center");
-            //         //taxonomy
-            //         $(".page-taxonomy .sidebar-second").removeClass("top-right-fixed");
-            //         $(".page-taxonomy .sidebar-first").removeClass("top-left-fixed");
-            //         $(".page-taxonomy .main.columns").removeClass("top-center");
-            //         //node detail
-            //
-            //
-            //             $(".node-type-idea .sidebar-first").removeClass("top-left-fixed");
-            //             $(".node-type-idea .main.columns").removeClass("top-center-fixed");
-            //
-            //
-            //     }
-            //     else {
-            //         $(".l-header").addClass("header-fixed");
-            //         //front
-            //         if ($(window).scrollTop() > 720) {
-            //             $(".front .sidebar-second").addClass("top-right-fixed");
-            //             $(".front .sidebar-first").addClass("top-left-fixed");
-            //             $(".front .main.columns").addClass("top-center");
-            //         }
-            //         //taxonomy
-            //         $(".page-taxonomy .sidebar-second").addClass("top-right-fixed");
-            //         $(".page-taxonomy .sidebar-first").addClass("top-left-fixed");
-            //         $(".page-taxonomy .main.columns").addClass("top-center");
-            //         //node detail
-            //
-            //         $(".node-type-idea .sidebar-first").addClass("top-left-fixed");
-            //         $(".node-type-idea .main.columns").addClass("top-center-fixed");
-            //
-            //
-            //     }
-            // });
-
-            //set fixed position
-            // $(window).on('scroll', function () {
-            //
-            //     if ($(window).scrollTop() > 60) {
-            //
-            //     }else{
-            //
-            //     }
-            // });
             //search
             $(".idea-search-icon a").click(function () {
                 if ($("#search-idea").hasClass('hide')) {
@@ -407,14 +357,53 @@
 
             function getPos(el) {
                 // yay readability
-                for (var lx=0, ly=0;
-                     el != null;
-                     lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
-                return {x: lx,y: ly};
+                for (var lx = 0, ly = 0;
+                        el != null;
+                        lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent)
+                    ;
+                return {x: lx, y: ly};
             }
+
+            //get show user ipad
+
+            $(".user-menu-mobile a.show-user").click(function () {
+                $(".user-mobile-info-wrapper").show();
+            });
+            $(".user-mobile-info-wrapper a.close").click(function () {
+                $(".user-mobile-info-wrapper").hide();
+            });
+            $(".search-menu-mobile a").click(function () {
+                $(".search-menu-mobile-wrapper").show();
+                $("#search-idea").removeClass('hide');
+            });
+            $(".search-menu-mobile-wrapper a.close").click(function () {
+                $(".search-menu-mobile-wrapper").hide();
+                $("#search-idea").addClass('hide');
+            });
+            $(".menu-icon a.menu-show-hide").click(function(){
+               if ($(".menu-mobile").hasClass('hide')) {
+                    $(".menu-mobile").removeClass('hide');
+                } else {
+                    $(".menu-mobile").addClass('hide');
+                }
+            });
+            
+            $(".link-post").click(function(){
+               $(".share-link").show();
+               $(".share-link").select();
+            });
+            
+            $(".link-post").mouseleave(function(){
+               setTimeout(function(){
+                   $(".share-link").hide();
+               },3000);
+                
+               
+            });
+            
 
 
         }
     };
 })
-(jQuery);
+        (jQuery);

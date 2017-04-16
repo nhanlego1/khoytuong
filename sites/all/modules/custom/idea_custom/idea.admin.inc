@@ -20,63 +20,58 @@ function idea_admin(){
         '#default_value'=> variable_get('filter_word')
     );
 
-    //set default value
-
-//    $form['setting']['xu_like'] = array(
-//        '#type'=>'textfield',
-//        '#title'=>'Số điểm khi like',
-//        '#default_value'=> variable_get('xu_like',10)
-//    );
-    $form['setting']['xu_post'] = array(
+    $form['setting']['idea_post'] = array(
         '#type'=>'textfield',
         '#title'=>'Số điểm khi đăng bài',
-        '#default_value'=> variable_get('xu_post',20)
+        '#default_value'=> variable_get('idea_post',20)
     );
-//    $form['setting']['xu_share_social'] = array(
-//        '#type'=>'textfield',
-//        '#title'=>'Số điểm khi share bài',
-//        '#default_value'=> variable_get('xu_share_social',20)
-//    );
-//    $form['setting']['xu_comment'] = array(
-//        '#type'=>'textfield',
-//        '#title'=>'Số điểm khi bình luận',
-//        '#default_value'=> variable_get('xu_comment',20)
-//    );
-//    $form['setting']['xu_click'] = array(
-//        '#type'=>'textfield',
-//        '#title'=>'Số điểm khi xem bài viết của bạn',
-//        '#default_value'=> variable_get('xu_click',10)
-//    );
-    $form['setting']['xu_register'] = array(
+
+    $form['setting']['every_limit_like'] = array(
+        '#type'=>'textfield',
+        '#title'=>'Số like giới hạn cộng điểm.',
+        '#default_value'=> variable_get('every_limit_like',100)
+    );
+    $form['setting']['idea_like'] = array(
+        '#type'=>'textfield',
+        '#title'=>'Số điểm khi like mỗi '.variable_get('every_limit_like',100).' bài viết của bạn',
+        '#default_value'=> variable_get('idea_view',50)
+    );
+    $form['setting']['idea_register'] = array(
         '#type'=>'textfield',
         '#title'=>'Số điểm khi đăng ký tài khoản',
-        '#default_value'=> variable_get('xu_register',20)
+        '#default_value'=> variable_get('idea_register',200)
     );
-    $form['setting']['xu_friend'] = array(
+    $form['setting']['idea_invite_friend'] = array(
         '#type'=>'textfield',
         '#title'=>'Số điểm khi giới thiệu bạn bè đăng ký',
-        '#default_value'=> variable_get('xu_friend',10)
+        '#default_value'=> variable_get('idea_invite_friend',100)
     );
-    $form['setting']['owner_post'] = array(
+    $form['setting']['card_20'] = array(
         '#type'=>'textfield',
-        '#title'=>'Số điểm khi tác giả bài post nhận được',
-        '#default_value'=> variable_get('owner_post',2)
+        '#title'=>'Card 20k.',
+        '#default_value'=> variable_get('card_20',2000)
     );
-//    $form['setting']['rule_game'] = array(
-//        '#type'=>'text_format',
-//        '#title'=>'Thể lệ và nội quy',
-//        '#default_value'=> variable_get('rule_game')
-//    );
-//    $form['setting']['popup_info'] = array(
-//        '#type'=>'text_format',
-//        '#title'=>'Quảng cáo game',
-//        '#default_value'=> variable_get('popup_info')
-//    );
-//    $form['setting']['gift_after'] = array(
-//        '#type'=>'text_format',
-//        '#title'=>'Message sau khi đổi quà. ',
-//        '#default_value'=> variable_get('gift_after')
-//    );
+      $form['setting']['card_50'] = array(
+        '#type'=>'textfield',
+        '#title'=>'Card 50k.',
+        '#default_value'=> variable_get('card_50',5000)
+    );
+       $form['setting']['card_100'] = array(
+        '#type'=>'textfield',
+        '#title'=>'Card 100k.',
+        '#default_value'=> variable_get('card_100',10000)
+    );
+       $form['setting']['card_200'] = array(
+        '#type'=>'textfield',
+        '#title'=>'Card 200k.',
+        '#default_value'=> variable_get('card_200',20000)
+    );
+       $form['setting']['card_500'] = array(
+        '#type'=>'textfield',
+        '#title'=>'Card 500k.',
+        '#default_value'=> variable_get('card_500',50000)
+    );
+   
     $form['setting']['email_processcing'] = array(
         '#type'=>'text_format',
         '#title'=>'Email template xác nhận thông tin nhận quà. ',
@@ -97,6 +92,11 @@ function idea_admin(){
         '#title'=>'Email template Mời bạn bè tham gia.',
         '#default_value'=> variable_get('email_invite')
     );
+     $form['setting']['message_node_enought_point'] = array(
+        '#type'=>'text_format',
+        '#title'=>'Thông báo khi chưa đủ điểm nhậm quà.',
+        '#default_value'=> variable_get('message_node_enought_point')
+    );
     $form['submit'] = array(
         '#type'=>'submit',
         '#value'=>'Save'
@@ -106,21 +106,21 @@ function idea_admin(){
 
 function idea_admin_submit($form, &$form_state){
     $data = $form_state['values'];
-
     variable_set('filter_word', $data['filter_word']);
-//    variable_set('xu_like', $data['xu_like']);
-    variable_set('xu_post', $data['xu_post']);
-//    variable_set('xu_share_social', $data['xu_share_social']);
-//    variable_set('xu_comment', $data['xu_comment']);
-//    variable_set('xu_click', $data['xu_click']);
-    variable_set('xu_register', $data['xu_register']);
-    variable_set('xu_friend', $data['xu_friend']);
-    variable_set('owner_post', $data['owner_post']);
-//    variable_set('rule_game', $data['rule_game']['value']);
-//    variable_set('popup_info', $data['popup_info']['value']);
+    variable_set('idea_post', $data['idea_post']);
+    variable_set('idea_like', $data['idea_like']);
+    variable_set('every_limit_like', $data['every_limit_like']);
+    variable_set('idea_register', $data['idea_register']);
+    variable_set('idea_invite_friend', $data['idea_invite_friend']);
+    variable_set('card_20', $data['card_20']);
+    variable_set('card_50', $data['card_50']);
+    variable_set('card_100', $data['card_100']);
+    variable_set('card_200', $data['card_200']);
+    variable_set('card_500', $data['card_500']);
     variable_set('email_processcing', $data['email_processcing']['value']);
     variable_set('email_compeleted', $data['email_compeleted']['value']);
     variable_set('email_cancel', $data['email_cancel']['value']);
     variable_set('email_invite', $data['email_invite']['value']);
-//    variable_set('gift_after',$data['gift_after']['value']);
+    variable_set('message_node_enought_point', $data['message_node_enought_point']['value']);
+    drupal_set_message('Update success.');
 }

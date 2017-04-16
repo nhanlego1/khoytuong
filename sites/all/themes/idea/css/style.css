@@ -223,7 +223,7 @@ ul.account-detail li a {
 
 ul.account-detail li a span {
     float: right;
-    margin-right: 20px;
+    margin-right: 0px;
     width: 70px;
     text-align: left;
 }
@@ -1262,7 +1262,7 @@ ul.menu li a{
     display: none;
 }
 footer{
-    display: none;
+    /*    display: none;*/
 }
 .short-desc-detail{
     font-style: italic;
@@ -1368,4 +1368,618 @@ ul.amazingcarousel-list li{
     color: #FFFFFF;
     z-index: 999;
     top: 52px;
+}
+.privatemsg-author-avatar .user-picture img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px; 
+}
+#edit-privatemsg, #edit-field-score{
+    display: none;
+}
+.top-bar{
+    display: none;
+}
+/**
+* Css for mobile
+*/
+@media only screen and (max-width:1024px) and (min-width:768px)  {
+    .top-bar{
+        display: block;
+        height: 45px;
+    }
+    .idea .sidebar-first {
+        display: none;
+        position: absolute;
+    }
+
+    .idea .medium-6.main {
+        left:0px;
+        width: 55%;
+        max-width: 55%;
+    }
+    .top-bar .title-area {
+        float: none;
+        width: 100%;
+    }
+    .top-bar .menu-icon {
+        top: 0px; 
+        margin-top:0px;
+        float: right;
+        right: 12px;
+        display: block!important;
+        width: 86px;
+        position: absolute;
+    }
+    .top-bar .menu-icon a span{
+        color: #fff;
+    }
+    .l-header-region{
+        display: none;
+    }
+    .hide-for-small{
+        display: none!important;
+    }
+    .top-bar ul li h1{
+        padding-left: 10px;
+        color:#fff;
+    }
+    .idea .sidebar-second {
+        max-width: 43%;
+        width: 43%;
+    }
+    .popular-item .img-popular {
+        max-width: 100px;
+    }
+    .article-ideas .img-popular{
+        max-width: 170px;
+    } 
+    .popular-article img-popular img{
+
+    }
+    .popular-item .action-post span {
+        margin: 2px 1px 0px 12px;
+    }
+
+    #views-exposed-form-article-popular-block .nice-select {
+        width: 105%;
+        text-transform: inherit;
+        font-size: 10px;
+
+    }
+    .action-post span {
+        margin: 10px 28px 10px 9px;
+    }
+    .view-news-article-top .art-img img{
+        width: 100%;
+    }
+    .page-node .top-bar h1{
+        font-size: 22px;
+        padding-top: 8px;
+        font-weight: bold;
+    }
+    .top-bar .menu-icon a {
+        height: 34px;
+        line-height: 33px;
+        padding: 0 2.5rem 0 0.9375rem;
+        color: #FFFFFF;
+        position: relative;
+        width: 100px;
+    }
+    .top-bar .name {
+        height: 2.8125rem;
+        margin: 0;
+        font-size: 16px;
+        float: left;
+    }
+    .user-menu-mobile{
+        width: 30px;
+        float: right;
+        margin-right: 100px;
+        margin-top: 8px;
+    }
+    .search-menu-mobile{
+        width: 30px;
+        float: right;
+        margin-right: 10px;
+        margin-top: 8px;
+    }
+    .user-menu-mobile a span{
+        color: #fff;
+        font-size: 24px
+    }
+    .search-menu-mobile a span{
+        color: #fff;
+    }
+    .user-mobile-info{
+        position: absolute;
+        width: 320px;
+        left: 22%;
+        background: #fff;
+        margin-top: 12px;
+        padding: 20px;
+    }
+    .user-mobile-info-wrapper{
+        background: rgba(8, 8, 8, 0.83);
+        width: 1024px;
+        height: 768px;
+        position: absolute;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        padding-top: 100px;
+        display: none;
+    }
+    .idea .form-item, .form-actions {
+        margin-bottom: 15px;
+    }
+    a.close{
+        position: absolute;
+        left: 53%;
+        margin-top: -14px;
+        opacity: 1;
+    }
+    .search-menu-mobile-wrapper{
+        background: rgba(8, 8, 8, 0.83);
+        width: 1024px;
+        height: 768px;
+        position: absolute;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        padding-top: 50px;
+        display: none;
+    }
+    .search-menu-mobile-wrapper #search-idea{
+        width: 73%;
+    }
+    .search-menu-mobile-wrapper a.close {
+        position: absolute;
+        left: 63%;
+        margin-top: -65px;
+    }
+    .user-menu-mobile a img{
+        border-radius: 50px;
+    }
+    .user-menu-mobile ul.account-detail li a span{
+        color:#333;
+        font-size: 16px;
+    }
+    .name-link-post{
+        width: 82%;
+    }
+    .user-menu-mobile a span.notification-small {
+        color: #fff;
+        font-size: 24px;
+        /* right: 10px!important; */
+        left: 86%;
+        top: 2px;
+        font-size: 11px;
+    }
+    .menu-mobile{
+        background: rgba(8, 8, 8, 0.83);
+        position: absolute;
+        width: 320px;
+        right: -12px;
+        top: 46px;
+        z-index: 100;
+    }
+    .menu-mobile ul.menu{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .menu-mobile ul.menu li{
+        width: 100%;
+        text-align: center;
+        float: left;
+        height: 40px;
+        padding: 0!important;
+        margin: 0!important;
+        border-bottom: 1px solid #fff;
+    }
+    .menu-mobile ul.menu li a{
+        padding:0!important;
+        margin: 0!important;
+        width: 100%!important;
+        text-align: center;
+    }
+    .top-bar .menu-icon a {
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 0.8125rem;
+        font-weight: bold;
+        position: relative;
+        display: block;
+        padding: 0 0.9375rem;
+        height: 2.8125rem;
+        line-height: 2.8125rem;
+    }
+    .top-bar .menu-icon a span::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 0;
+        top: 50%;
+        margin-top: -8px;
+        right: 0.9375rem;
+        box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
+        width: 16px;
+    }
+    .page-node .top-bar .menu-icon {
+        top:8px;
+    }
+    .page-node .top-bar .menu-icon .menu-mobile{
+        top:38px;
+    }
+    .page-user-register .social_login {
+        height: 114px;
+        overflow: hidden;
+        position: absolute;
+        right: 61px;
+        top: 104px;
+        width: 67px;
+    }
+    .page-user-register .group-personal, #user-profile-form .group-personal {
+        float: left;
+        width: 88%;
+    }
+}
+
+/**
+* Css for mobile
+*/
+@media only screen and (max-width:756px) and (min-width:320px)  {
+    .top-bar{
+        display: block;
+        height: 45px;
+    }
+    .idea .sidebar-first {
+        display: none;
+        position: absolute;
+    }
+    .idea .sidebar-second{
+        display: none;
+        position: absolute;
+    }
+
+    .idea .medium-6.main {
+        left:0px;
+        width: 95%;
+        max-width: 100%;
+        position: inherit!important;
+        z-index: 1;
+    }
+    .page-node .medium-6.main {
+        left: 0px;
+        width: 98%;
+        max-width: 100%;
+        position: inherit!important;
+        z-index: 1;
+        float: left;
+    }
+    .top-bar .title-area {
+        float: none;
+        width: 100%;
+    }
+    .top-bar .menu-icon {
+        top: 0px; 
+        margin-top:0px;
+        float: right;
+        right: 12px;
+        display: block!important;
+        width: 86px;
+        position: absolute;
+    }
+    .page-node .top-bar .menu-icon {
+        top: 0px; 
+        margin-top:0px;
+        float: right;
+        right: 12px;
+        display: block!important;
+        width: 100px;
+        position: absolute;
+    }
+    .page-node .top-bar .menu-icon a span{
+        color: #fff;
+        font-size: 16px;
+    }
+    .top-bar .menu-icon a span{
+        color: #fff;
+        font-size: 16px;
+    }
+    .l-header-region{
+        display: none;
+    }
+    .hide-for-small{
+        display: none!important;
+    }
+    .top-bar ul li h1{
+        padding-left: 10px;
+        color:#fff;
+        font-size: 14px!important;
+    }
+    .idea .sidebar-second {
+        max-width: 43%;
+        width: 43%;
+    }
+    .page-node .sidebar-second {
+        max-width: 98%;
+        width: 98%;
+        display: block!important;
+        position: inherit!important;
+        float:left!important;
+        margin-left: 4px;
+    }
+    .popular-item .img-popular {
+        max-width: 100px;
+    }
+    .article-ideas .img-popular{
+        max-width: 132px;
+    } 
+    .popular-article img-popular img{
+
+    }
+    .popular-item .action-post span {
+        margin: 2px 1px 0px 12px;
+    }
+
+    #views-exposed-form-article-popular-block .nice-select {
+        width: 105%;
+        text-transform: inherit;
+        font-size: 10px;
+
+    }
+    .action-post span {
+        margin: 10px 16px 10px 9px;
+    }
+    .comment-submit {
+        margin-right: 9px;
+    }
+    .view-news-article-top .art-img img{
+        width: 100%;
+    }
+    .page-node .top-bar h1{
+        font-size: 14px;
+        padding-top: 8px;
+        font-weight: bold;
+    }
+    .top-bar .menu-icon a {
+        height: 34px;
+        line-height: 33px;
+        padding: 0 2.5rem 0 0.9375rem;
+        color: #FFFFFF;
+        position: relative;
+        width: 100px;
+    }
+    .top-bar .name {
+        height: 2.8125rem;
+        margin: 0;
+        font-size: 16px;
+        float: left;
+    }
+    .user-menu-mobile{
+        width: 30px;
+        float: right;
+        margin-right: 100px;
+        margin-top: 8px;
+    }
+    .page-node .user-menu-mobile {
+        width: 30px;
+        float: right;
+        margin-right: 111px;
+        margin-top: 8px;
+    }
+    .search-menu-mobile{
+        width: 30px;
+        float: right;
+        margin-right: 10px;
+        margin-top: 8px;
+    }
+    .user-menu-mobile a span{
+        color: #fff;
+        font-size: 24px
+    }
+    .search-menu-mobile a span{
+        color: #fff;
+    }
+    .user-mobile-info{
+        position: absolute;
+        width: 320px;
+        left: 2.5%;
+        background: #fff;
+        margin-top: 12px;
+        padding: 20px;
+    }
+    .user-mobile-info-wrapper{
+        background: rgba(8, 8, 8, 0.83);
+        width: 1024px;
+        height: 768px;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        padding-top: 37px;
+        display: none;
+    }
+    .page-node .name-link-post {
+        width: 78%;
+    }
+    .idea .form-item, .form-actions {
+        margin-bottom: 15px;
+    }
+    a.close{
+        position: absolute;
+        left: 34%;
+        margin-top: -14px;
+        opacity: 1;
+    }
+    .search-menu-mobile-wrapper{
+        background: rgba(8, 8, 8, 0.83);
+        width: 1024px;
+        height: 768px;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        padding-top: 50px;
+        display: none;
+    }
+    .search-menu-mobile-wrapper #search-idea{
+        width: 73%;
+    }
+    .search-menu-mobile-wrapper a.close {
+        position: absolute;
+        left: 35%;
+        margin-top: -74px;
+    }
+    .user-menu-mobile a img{
+        border-radius: 50px;
+    }
+    .user-menu-mobile ul.account-detail li a span{
+        color:#333;
+        font-size: 16px;
+    }
+    .name-link-post{
+        width: 82%;
+    }
+    .user-menu-mobile a span.notification-small {
+        color: #fff;
+        font-size: 24px;
+        /* right: 10px!important; */
+        left: 71%;
+        top: 2px;
+        font-size: 11px;
+    }
+    .menu-mobile{
+        background: rgba(8, 8, 8, 0.83);
+        position: fixed;
+        width: 100%;
+        right: 0;
+        top: 46px;
+        z-index: 100;
+    }
+    .menu-mobile ul.menu{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .menu-mobile ul.menu li{
+        width: 100%;
+        text-align: center;
+        float: left;
+        height: 40px;
+        padding: 0!important;
+        margin: 0!important;
+        border-bottom: 1px solid #fff;
+    }
+    .menu-mobile ul.menu li a{
+        padding:0!important;
+        margin: 0!important;
+        width: 100%!important;
+        text-align: center;
+        font-size: 14px;
+        padding-top: 6px;
+    }
+    .page-node .top-bar .menu-icon a {
+        height: 34px;
+        line-height: 33px;
+        padding: 0 2.5rem 0 0.9375rem;
+        color: #FFFFFF;
+        position: relative;
+        width: 85px;
+    }
+    .top-bar .menu-icon a {
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 0.8125rem;
+        font-weight: bold;
+        position: relative;
+        display: block;
+        padding: 0 0.9375rem;
+        height: 2.8125rem;
+        line-height: 2.8125rem;
+    }
+    .top-bar .menu-icon a span::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 0;
+        top: 50%;
+        margin-top: -8px;
+        right: 0.9375rem;
+        box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
+        width: 16px;
+    }
+    .page-node .top-bar .menu-icon {
+        top:8px;
+    }
+    .page-node .top-bar .menu-icon .menu-mobile{
+        top:38px;
+    }
+    .page-user-register .social_login {
+        height: 114px;
+        overflow: hidden;
+        position: absolute;
+        right: 61px;
+        top: 104px;
+        width: 67px;
+    }
+    .page-user-register .group-personal, #user-profile-form .group-personal {
+        float: left;
+        width: 88%;
+    }
+    .node-idea-form fieldset {
+        width: 100%;
+        padding: 0px;
+        margin-top: 20px;
+    }
+    #search-idea .search-google {
+        width: 37%;
+        float: left;
+        margin-left: 10px;
+        height: 30px;
+        font-size: 14px;
+    }
+    #search-idea .submit-search{
+        float:left;
+        height: 30px;
+        font-size: 14px;
+    }
+    .notification {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background: red;
+        border-radius: 50px;
+        color: #fff;
+        text-align: center;
+        padding-top: 1px;
+        top: 32px;
+        right: 193px;
+    }
+    .amazingcarousel-next, .amazingcarousel-prev{
+        display: none!important;
+    }
+    .block-idea-custom-post-detail .action-post span {
+        margin: 10px 6px 10px 15px;
+    }
+    .node-webform{
+        margin-top: 70px;
+    }
+    #exchancge-giff .form-checkboxes label{
+        font-size: 14px;
+        font-weight: normal;
+    }
+    #exchancge-giff .form-item{
+        margin: 0;
+    }
+}
+#exchancge-giff label{
+    font-size: 18px;
+    font-weight: bold;
+}
+#exchancge-giff .form-checkboxes label{
+    font-size: 16px;
+    font-weight: normal;
 }

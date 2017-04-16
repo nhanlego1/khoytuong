@@ -38,10 +38,13 @@ $token = base64_encode(time().'|'.$account->uid);
         <?php endif; ?>
         <li><i class="fa fa-edit"></i><a class="my-post" href="javascript:;">Bài viết của tôi <span><?php  print _idea_get_post_count();?></span></a></li>
         <li><i class="fa fa-save"></i><a class="my-save-post" href="javascript:;">Bài viết quan tâm <span  class="save-count"><?php print _idea_get_favor_count() ?></span></a></li>
-        <li><i class="fa fa-refresh"></i><a href="javascript:;">Đổi điểm</a></li>
+        <li><i class="fa fa-refresh"></i>
+            <a class="exchange cboxElement" href="<?php print url('idea/user/exchange'); ?>">Đổi điểm <span><?php  print $account->field_score[LANGUAGE_NONE][0]['value'];?></span></a>
+        </li>
         <li class="sendtofriend"><i class="fa fa-group"></i><a class="sendtofriend" href="javascript:;">Mời bạn bè</a>
             <input type="text" class="sendfriend hidden" style="width: 90%" value="<?php print url('user/register',array('absolute'=>true,'query'=>array('token'=>$token))) ?>"/>
         </li>
-        <li><i class="fa fa-bell"></i><a href="/messages">Thông báo từ ban quản trị</a></li>
+        <li><i class="fa fa-bell"></i><a href="/messages">Thông báo <span style="color:red;"><?php print privatemsg_unread_count() ?></span></a></li>
+        <li><i class="fa fa-power-off"></i><a href="/user/logout">Đăng xuất</a></li>
     </ul>
 </div>

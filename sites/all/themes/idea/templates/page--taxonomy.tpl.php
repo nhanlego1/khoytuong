@@ -4,31 +4,45 @@
   <!--.l-header -->
   <header role="banner" class="l-header">
 
-    <?php if ($top_bar): ?>
-      <!--.top-bar -->
-      <?php if ($top_bar_classes): ?>
-        <div class="<?php print $top_bar_classes; ?>">
-      <?php endif; ?>
-      <nav class="top-bar" data-topbar <?php print $top_bar_options; ?>>
-        <ul class="title-area">
-          <li class="name"><h1><?php print $linked_site_name; ?></h1></li>
-          <li class="toggle-topbar menu-icon">
-            <a href="#"><span><?php print $top_bar_menu_text; ?></span></a></li>
-        </ul>
-        <section class="top-bar-section">
-          <?php if ($top_bar_main_menu) : ?>
-            <?php print $top_bar_main_menu; ?>
-          <?php endif; ?>
-          <?php if ($top_bar_secondary_menu) : ?>
-            <?php print $top_bar_secondary_menu; ?>
-          <?php endif; ?>
-        </section>
-      </nav>
-      <?php if ($top_bar_classes): ?>
-        </div>
-      <?php endif; ?>
-      <!--/.top-bar -->
-    <?php endif; ?>
+  
+       <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                <li class="name">
+                    <a href="<?php print url('<front>') ?>"><h1><?php print t('KHOYTUONG.VN') ?></h1></a>
+                </li>
+
+                <li class="user-menu-mobile">
+                    <a class="show-user" href="javascript:;"><?php print _get_user_avatar_mobile() ?></a>
+                    <div class="user-mobile-info-wrapper">
+                        <div class="user-mobile-info">
+                            <?php print _user_block_info(); ?>
+                        </div>
+                        <a class="close" href="javascript:;"><span class="fa fa-close"></span></a>
+                    </div>
+                </li>
+                <li class="search-menu-mobile">
+                    <a href="javascript:;"><span class="fa fa-search"></span></a>
+                    <div class="search-menu-mobile-wrapper">
+                        <?php print _search_mobile(); ?>
+                        <a class="close" href="javascript:;"><span class="fa fa-close"></span></a>
+                    </div>
+
+                </li>
+                <li class="menu-icon">
+                    <a class="menu-show-hide" href="javascript:;"><span>Menu</span></a>
+                    <div class="menu-mobile hide">
+                        <?php
+                        $block = module_invoke('menu_block', 'block_view', 1);
+                        print render($block['content']);
+                        ?>
+                    </div>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+
+            </section>
+        </nav>
+     
 
     <!-- Title, slogan and menu -->
     <?php if ($alt_header): ?>

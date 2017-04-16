@@ -18,8 +18,9 @@ function idea_custom_menu()
     $items['admin/dashboard'] = array(
         'title' => 'Admin Dashboard ',
         'description' => 'Control config for artline.',
-        'page callback' => 'artline_admins_dashboard',
+        'page callback' => 'idea_admin_dashboard',
         'access arguments' => array('administer artline'),
+        'file' => 'idea_custom.pages.inc',
     );
     $items['frontpage/pager'] = array(
         'page callback' => 'idea_custom_article_more',
@@ -100,6 +101,12 @@ function idea_custom_menu()
     );
     $items['idea/user/save'] = array(
         'page callback' => 'idea_custom_user_save',
+        'access callback' => TRUE,
+        'type' => MENU_LOCAL_ACTION,
+        'file' => 'idea_custom.pages.inc',
+    );
+    $items['idea/user/exchange'] = array(
+        'page callback' => 'idea_custom_user_exchange',
         'access callback' => TRUE,
         'type' => MENU_LOCAL_ACTION,
         'file' => 'idea_custom.pages.inc',
@@ -207,6 +214,11 @@ function idea_custom_theme()
         'render element' => 'element',
         'path' => drupal_get_path('module', 'idea_custom') . '/theme',
         'template' => 'idea-search',
+    );
+     $items['idea_admin_dashboard'] = array(
+        'render element' => 'element',
+        'path' => drupal_get_path('module', 'idea_custom') . '/theme',
+        'template' => 'idea-admin-dashboard',
     );
 
     return $items;
@@ -448,11 +460,26 @@ function idea_custom_like_post($nid)
             node_save($node);
             //track log
             idea_custom_logs($nid, 'like');
+            //update score for user
+        
+        $author = node_load($node->uid);
+        if($node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 1||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 3||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 4||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 5||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 6||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 7||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 8||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 9||
+                $node->field_like[LANGUAGE_NONE][0]['value']/ variable_get('every_limit_like',100) == 10){
+            $author->field_score[LANGUAGE_NONE][0]['value'] = $author->field_score[LANGUAGE_NONE][0]['value'] + variable_get('idea_view',50);
+            user_save($author);
+        }
             print _get_liked_post($nid);
         } else {
             print $node->field_like[LANGUAGE_NONE][0]['value'];
         }
-
+        
 
     } else {
         print 'Access denied';
@@ -482,10 +509,10 @@ function idea_custom_view_post($nid)
         node_save($node);
         //track log
         idea_custom_logs($nid, 'view');
-
-        // print 'ok';
+        return $node->field_views[LANGUAGE_NONE][0]['value'];
 
     }
+    return $node->field_views[LANGUAGE_NONE][0]['value'];
 }
 
 /**
@@ -786,21 +813,24 @@ function _get_comment_count($nid)
 function idea_custom_node_view(&$node)
 {
     if ($node->type = 'idea') {
-        idea_custom_view_post($node->nid);
+        $views = idea_custom_view_post($node->nid);
     }
 }
 
 /**
  * My post number
  */
-function _idea_get_post_count()
+function _idea_get_post_count($uid=false)
 {
     global $user;
+    if(!$uid){
+        $uid = $user->uid;
+    }
     $query = db_select('node', 'n');
     $query->fields('n');
     $query->condition('type', 'idea');
   //  $query->condition('status', 1);
-    $query->condition('uid', $user->uid);
+    $query->condition('uid', $uid);
     $result = $query->execute()->fetchAll();
     if ($result) {
         return count($result);
@@ -861,11 +891,19 @@ function idea_custom_user_presave(&$edit, $account, $category)
     if ($result) {
         $edit['field_full_name'][LANGUAGE_NONE][0]['value'] = $result->name;
     }
+    //update score
+    if($account->field_score[LANGUAGE_NONE][0]['value'] <=0){
+     $edit['field_score'][LANGUAGE_NONE][0]['value'] = variable_get('idea_register',200);   
+    }
+    
     if(isset($_GET['token']) && !empty($_GET['token'])){
         $code = base64_decode($_GET['token']);
         $code = explode('|',$code);
         $uid = $code[1];
         //update point for user
+        $user = user_load($uid);
+        $user->field_score[LANGUAGE_NONE][0]['value'] = $user->field_score[LANGUAGE_NONE][0]['value'] + variable_get('idea_invite_friend',100);
+        user_save($user);
     }
 
 
@@ -983,6 +1021,42 @@ function idea_custom_views_query_alter(&$view, &$query) {
     }
 }
 /**
- * count message
+ * user block info
  */
+function _user_block_info(){
+    global $user;
+    $profile = false;
+    if ($user->uid > 0) {
+        $account = user_load($user->uid);
+        if ($account->status > 0) {
+            $profile = theme('idea_account_info', array('account' => $account));
+        }
+    }else{
+        $form = drupal_get_form('user_login_block');
+        $profile = drupal_render($form);        
+    }
+    return $profile;
+}
 
+/**
+ * search mobile
+ */
+function _search_mobile(){
+    return theme('idea_search');
+}
+/**
+ * Implement hook_node_update
+ */
+function idea_custom_node_update($node){
+    if($node->type=='idea'){
+       if($node->original->status==0 && $node->status==1){
+           $user = user_load($node->uid);
+           $user->field_score[LANGUAGE_NONE][0]['value'] =  $user->field_score[LANGUAGE_NONE][0]['value'] + variable_get('idea_post',20);
+           user_save($user);
+       }
+    }
+}
+
+/**
+ * function 
+ */
