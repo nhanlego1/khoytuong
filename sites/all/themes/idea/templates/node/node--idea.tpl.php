@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a node.
@@ -96,9 +95,9 @@ $user = user_load($node->uid);
                 <?php print $user->name ?>
             <?php endif; ?>
             <span class="link-post"><i class="fa fa-link-custom" aria-hidden="true"></i>
-            <input class="share-link" type="text"
-                   value="<?php print url('node/' . $node->nid, array('absolute' => true)) ?>"/>
-        </span>
+                <input class="share-link" type="text"
+                       value="<?php print url('node/' . $node->nid, array('absolute' => true)) ?>"/>
+            </span>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -112,23 +111,44 @@ $user = user_load($node->uid);
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <?php $count = 1; ?>
-                        <?php foreach ($node->field_images[LANGUAGE_NONE] as $key => $image): ?>
-                            <li data-target="#myCarousel" data-slide-to="<?php print $key ?>"
-                                class="<?php if ($count == 1) {
-                                    print 'active';
-                                } ?>"></li>
-                            <?php $count++; endforeach; ?>
+                        <?php if (!isset($node->field_images[LANGUAGE_NONE])): ?>
+                            <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
+                                <li data-target="#myCarousel" data-slide-to="1"
+                                    class="active"></li>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <?php foreach ($node->field_images[LANGUAGE_NONE] as $key => $image): ?>
+                                <li data-target="#myCarousel" data-slide-to="<?php print $key ?>"
+                                    class="<?php
+                        if ($count == 1) {
+                            print 'active';
+                        }
+                                    ?>"></li>
+                                    <?php $count++;
+                                endforeach; ?>
+                        <?php endif; ?>
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <?php $count = 1; ?>
-                        <?php foreach ($node->field_images[LANGUAGE_NONE] as $image): ?>
-                            <div class="item <?php if ($count == 1) {
-                                print 'active';
-                            } ?>">
-                                <?php print theme('image_style', array('path' => $image['uri'], 'style_name' => 'article_full')) ?>
+                        <?php if (!isset($node->field_images[LANGUAGE_NONE])): ?>
+                        <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
+                        <div class="item active">
+        <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'article_full')) ?>
                             </div>
-                            <?php $count++; endforeach; ?>
+                        <?php endif; ?>
+                        <?php else: ?>
+                        <?php foreach ($node->field_images[LANGUAGE_NONE] as $image): ?>
+                            <div class="item <?php
+                                     if ($count == 1) {
+                                         print 'active';
+                                     }
+                                     ?>">
+        <?php print theme('image_style', array('path' => $image['uri'], 'style_name' => 'article_full')) ?>
+                            </div>
+        <?php $count++;
+    endforeach; ?>
+                        <?php endif; ?>
                     </div>
 
                     <!-- Left and right controls -->
@@ -142,14 +162,14 @@ $user = user_load($node->uid);
                     </a>
                 </div>
 
-<!--                <ul class="example-orbit" data-orbit>-->
-<!--                    --><?php //foreach ($node->field_images[LANGUAGE_NONE] as $image): ?>
-<!--                        <li>-->
-<!--                            --><?php //print theme('image_style', array('path' => $image['uri'], 'style_name' => 'article_full')) ?>
-<!--                        </li>-->
-<!--                        --><?php //endforeach; ?>
-<!--                </ul>-->
-            <?php endif; ?>
+                <!--                <ul class="example-orbit" data-orbit>-->
+                <!--                    --><?php //foreach ($node->field_images[LANGUAGE_NONE] as $image):  ?>
+                <!--                        <li>-->
+                <!--                            --><?php //print theme('image_style', array('path' => $image['uri'], 'style_name' => 'article_full'))  ?>
+                <!--                        </li>-->
+                <!--                        --><?php //endforeach;  ?>
+                <!--                </ul>-->
+<?php endif; ?>
 
         </div>
     </div>

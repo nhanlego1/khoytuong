@@ -58,7 +58,7 @@
                             <?php if ($user->uid <= 0): ?>
                                 <a class="cboxElement ajax-comment" data="<?php print $node->nid ?>" href="<?php print url('idea/login') ?>">
                                 <?php else: ?>
-                                    <a data="<?php print $node->nid ?>" href="javascript:;">
+                                    <a data="<?php print $node->nid ?>" href="<?php print url('node/'.$node->nid) ?>">
                                     <?php endif; ?>
                                     <i class="fa fa-comments"></i></a><i class="count"><?php print _get_comment_count($node->nid) ?></i>
                         </span>

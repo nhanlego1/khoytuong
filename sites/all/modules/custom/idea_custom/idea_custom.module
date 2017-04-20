@@ -810,7 +810,7 @@ function _get_comment_count($nid)
 /**
  * implement hook node_view
  */
-function idea_custom_node_view(&$node)
+function idea_custom_node_view($node)
 {
     if ($node->type = 'idea') {
         $views = idea_custom_view_post($node->nid);

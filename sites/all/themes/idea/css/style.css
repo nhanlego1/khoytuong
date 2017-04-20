@@ -497,7 +497,7 @@ ul.pager--infinite-scroll li {
 }
 
 .node-idea .embedded-video .player iframe {
-    max-width: 590px;
+    max-width: 718px;
 }
 
 .block-idea-custom-post-detail {
@@ -572,11 +572,12 @@ ul.pager--infinite-scroll li {
     left: 30%;
 }
 
-.art-img span.video-popular img {
+art-img span.video-popular img {
     position: absolute;
     z-index: 999;
-    top: 32%;
+    top: 20%;
     left: 44%;
+    max-width: 10%;
 }
 
 .amazingcarousel-item .video-popular img {
@@ -1974,6 +1975,7 @@ ul.amazingcarousel-list li{
     #exchancge-giff .form-item{
         margin: 0;
     }
+    
 }
 #exchancge-giff label{
     font-size: 18px;
