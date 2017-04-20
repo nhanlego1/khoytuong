@@ -1737,7 +1737,7 @@ ul.amazingcarousel-list li{
 
     }
     .action-post span {
-        margin: 10px 16px 10px 9px;
+        margin: 10px 2px 10px 9px;
     }
     .comment-submit {
         margin-right: 9px;
@@ -1968,7 +1968,7 @@ ul.amazingcarousel-list li{
         display: none!important;
     }
     .block-idea-custom-post-detail .action-post span {
-        margin: 10px 6px 10px 15px;
+        margin: 10px 6px 10px 8px;
     }
     .node-webform{
         margin-top: 70px;
