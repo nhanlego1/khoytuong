@@ -343,7 +343,7 @@ ul.account-detail li a span {
     background: url("../images/icon-link.png") no-repeat center;
     cursor: pointer;
     position: relative;
-    top: -35px;
+    top: -10px;
     right: 10px;
 }
 
