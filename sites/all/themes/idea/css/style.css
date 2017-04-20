@@ -498,6 +498,7 @@ ul.pager--infinite-scroll li {
 
 .node-idea .embedded-video .player iframe {
     max-width: 718px;
+        width: 718px;
 }
 
 .block-idea-custom-post-detail {
