@@ -498,7 +498,7 @@ ul.pager--infinite-scroll li {
 
 .node-idea .embedded-video .player iframe {
     max-width: 718px;
-        width: 718px;
+    width: 718px;
 }
 
 .block-idea-custom-post-detail {
@@ -1626,6 +1626,10 @@ ul.amazingcarousel-list li{
         float: left;
         width: 88%;
     }
+    .node-idea .embedded-video .player iframe {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 /**
@@ -1977,13 +1981,17 @@ ul.amazingcarousel-list li{
         margin: 0;
     }
     .fa-link-custom {
-    top: -10px;
+        top: -10px;
 
-}
-.share-link{
-    left:-16px;
-}
-    
+    }
+    .share-link{
+        left:-16px;
+    }
+    .node-idea .embedded-video .player iframe {
+        max-width: 100%;
+        width: 100%;
+    }
+
 }
 #exchancge-giff label{
     font-size: 18px;
