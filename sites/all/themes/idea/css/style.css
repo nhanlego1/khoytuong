@@ -573,7 +573,7 @@ ul.pager--infinite-scroll li {
     left: 30%;
 }
 
-art-img span.video-popular img {
+.art-img span.video-popular img {
     position: absolute;
     z-index: 999;
     top: 20%;
