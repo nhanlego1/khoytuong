@@ -71,7 +71,7 @@ global $user;
             <span class="<?php if ($user->uid > 0): ?> comment-post  <?php endif; ?>">
                                 <?php if ($user->uid <= 0): ?>
                 <a class="ajax-comment" data="<?php print $node->nid ?>"
-                   href="<?php print url('idea/login') ?>">
+                   href="<?php print url('node/'.$node->nid) ?>">
                                     <?php else: ?>
                     <a data="<?php print $node->nid ?>" href="<?php print url('node/'.$node->nid) ?>">
                                         <?php endif; ?>
