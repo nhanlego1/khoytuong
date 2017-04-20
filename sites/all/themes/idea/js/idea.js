@@ -298,7 +298,7 @@
         attach: function (context, settings) {
             $(".ajax-share").colorbox({width: "340px", height: "400px"});
             $(".ajax-like").colorbox({width: "340px", height: "400px"});
-            $(".ajax-comment").colorbox({width: "340px", height: "400px"});
+            //$(".ajax-comment").colorbox({width: "340px", height: "400px"});
             $(".exchange").colorbox({width: "370px", height: "400px"});
             $(".ajax-save").colorbox({width: "340px", height: "400px"});
             $(".idea-post_ajax").colorbox({width: "460px", height: "600px"});

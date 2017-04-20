@@ -70,7 +70,7 @@ global $user;
                             </span>
             <span class="<?php if ($user->uid > 0): ?> comment-post  <?php endif; ?>">
                                 <?php if ($user->uid <= 0): ?>
-                <a class="cboxElement ajax-comment" data="<?php print $node->nid ?>"
+                <a class="ajax-comment" data="<?php print $node->nid ?>"
                    href="<?php print url('idea/login') ?>">
                                     <?php else: ?>
                     <a data="<?php print $node->nid ?>" href="<?php print url('node/'.$node->nid) ?>">
