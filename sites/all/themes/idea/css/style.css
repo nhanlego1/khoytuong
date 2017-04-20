@@ -1788,7 +1788,7 @@ ul.amazingcarousel-list li{
     .user-mobile-info{
         position: absolute;
         width: 320px;
-        left: 2.5%;
+        left: 2.4%;
         background: #fff;
         margin-top: 12px;
         padding: 20px;
@@ -1812,7 +1812,7 @@ ul.amazingcarousel-list li{
     }
     a.close{
         position: absolute;
-        left: 34%;
+        left: 33%;
         margin-top: -14px;
         opacity: 1;
     }
@@ -1828,11 +1828,11 @@ ul.amazingcarousel-list li{
         display: none;
     }
     .search-menu-mobile-wrapper #search-idea{
-        width: 73%;
+        width: 70%;
     }
     .search-menu-mobile-wrapper a.close {
         position: absolute;
-        left: 35%;
+        left: 33%;
         margin-top: -74px;
     }
     .user-menu-mobile a img{
