@@ -2062,6 +2062,21 @@ ul.amazingcarousel-list li{
         background: none;
         width: 40%;
     }
+    #amazingcarousel-container-3 {
+        padding: 32px 0px; 
+    }
+    #amazingcarousel-3 .amazingcarousel-list-container {
+        padding: 16px 0;
+        width: 100%!important;
+    }
+    #amazingcarousel-3 .amazingcarousel-list-wrapper{
+        width: 100%!important;
+    }
+    #amazingcarousel-3 .amazingcarousel-item-container{
+        width: 160px;
+        margin-right: 10px;
+    }
+        
 
 }
 #exchancge-giff label{
