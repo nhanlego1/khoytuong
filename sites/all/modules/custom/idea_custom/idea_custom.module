@@ -313,7 +313,7 @@ function idea_custom_block_view($delta = '')
             $block['content'] = '<div class="idea-loading"><img src="' . base_path() . path_to_theme('idea') . '/images/ajax-loader.gif"/></div>';
             break;
         case 'idea_post_relate' :
-            $block['content'] = idea_custom_post_relate();
+            $block['content'] = idea_custom_post_relate(2);
             break;
 
         case 'idea_post_front_top' :
@@ -363,7 +363,7 @@ function idea_custom_block_view($delta = '')
  * Idea post relate
  */
 
-function idea_custom_post_relate()
+function idea_custom_post_relate($ids)
 {
     //add js and css
     drupal_add_js(drupal_get_path('module', 'idea_custom') . '/js/amazingcarousel.js');
@@ -387,7 +387,7 @@ function idea_custom_post_relate()
             $data[] = $node;
         }
     }
-    return theme('idea_post_relate', array('nodes' => $data));
+    return theme('idea_post_relate', array('nodes' => $data,'ids'=> $ids));
 }
 
 

@@ -7,8 +7,8 @@
  */
 ?>
 <?php if ($nodes): ?>
-    <div id="amazingcarousel-container-2">
-        <div id="amazingcarousel-2">
+    <div id="<?php if($ids==1): ?> amazingcarousel-container-2 <?php else: ?>amazingcarousel-container-<?php print $ids ?><?php endif; ?>">
+        <div id="<?php if($ids==1): ?>amazingcarousel-2<?php else: ?>amazingcarousel-<?php print $ids ?><?php endif; ?>">
             <div class="amazingcarousel-list-container">
                 <div class="amazingcarousel-list-wrapper">
                     <ul class="amazingcarousel-list">

@@ -59,3 +59,7 @@ $account = user_load($node->uid);
     <div class="clearfix"></div>
 </div>
 <?php print idea_comment_form($node->nid) ?>
+
+<div class="relate-post">
+    <?php print  idea_custom_post_relate(3); ?>
+</div>

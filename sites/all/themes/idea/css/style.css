@@ -1137,6 +1137,10 @@ h2.block-title {
     text-align: left;
     font-size: 12px;
 }
+#amazingcarousel-3 .amazingcarousel-title {
+    text-align: left;
+    font-size: 12px;
+}
 .block-idea-custom-post-detail .action-post span{
     margin: 10px 38px 10px 15px;
 }
@@ -1171,6 +1175,9 @@ ul.menu li a{
     margin-bottom: 20px;
 }
 #amazingcarousel-2 .amazingcarousel-image img {
+    max-height: 87px;
+}
+#amazingcarousel-3 .amazingcarousel-image img {
     max-height: 87px;
 }
 .flexslider {
@@ -1316,6 +1323,9 @@ ul.amazingcarousel-list li{
 #amazingcarousel-2 .amazingcarousel-item-container {
     height: 190px;
 }
+#amazingcarousel-3 .amazingcarousel-item-container {
+    height: 190px;
+}
 .idea-search-icon a:hover{
     color: transparent;
 }
@@ -1386,6 +1396,9 @@ ul.amazingcarousel-list li{
 * Css for mobile
 */
 @media only screen and (max-width:1024px) and (min-width:768px)  {
+    .relate-post{
+        display: none;
+    }
     .top-bar{
         display: block;
         height: 45px;
@@ -1648,13 +1661,21 @@ ul.amazingcarousel-list li{
         display: none;
         position: absolute;
     }
-
+    .relate-post{
+        display: block!important;
+    }
     .idea .medium-6.main {
         left:0px;
         width: 95%;
         max-width: 100%;
         position: inherit!important;
         z-index: 1;
+    }
+    .block-idea-custom-idea-post-relate{
+        display:none;
+    }
+    .relate-post .block-idea-custom-idea-post-relate{
+        display:block;
     }
     .page-node .medium-6.main {
         left: 0px;
@@ -2038,9 +2059,9 @@ ul.amazingcarousel-list li{
         margin-top: -18px;
     }
     .page-user fieldset legend {
-    background: none;
-    width: 40%;
-}
+        background: none;
+        width: 40%;
+    }
 
 }
 #exchancge-giff label{
@@ -2057,5 +2078,8 @@ ul.amazingcarousel-list li{
 }
 .carousel-inner .item img{
     position: relative;
-    
+
+}
+.relate-post{
+    display: none;
 }

@@ -415,6 +415,13 @@
                    
                 });
             });
+            
+//            var body = $('body').width();
+//            if(body < 756){
+//                $(".block-idea-custom-idea-post-relate").clone().appendTo(".relate-post");
+//              //  $(".block-idea-custom-idea-post-relate").remove();
+//                $(".relate-post .block-idea-custom-idea-post-relate").show();
+//            }
 
             function getOriginalWidthOfImg(img_element) {
                 var t = new Image();
