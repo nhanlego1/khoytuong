@@ -57,7 +57,7 @@ Disallow: /scripts/
 Disallow: /themes/
 # Files
 Disallow: /users/*
-Disallow: /artline/xu/*
+Disallow: /idea/user/exchange
 Disallow: /CHANGELOG.txt
 Disallow: /cron.php
 Disallow: /INSTALL.mysql.txt
