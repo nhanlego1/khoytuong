@@ -1924,12 +1924,12 @@ ul.amazingcarousel-list li{
         top:38px;
     }
     .page-user-register .social_login {
-        height: 114px;
+        height: 60px;
         overflow: hidden;
         position: absolute;
-        right: 61px;
-        top: 104px;
-        width: 67px;
+        right: -178px;
+        top: 68px;
+        width: 100%;
     }
     .page-user-register .group-personal, #user-profile-form .group-personal {
         float: left;
@@ -1991,6 +1991,56 @@ ul.amazingcarousel-list li{
         max-width: 100%;
         width: 100%;
     }
+    page-user form fieldset.collapsible, fieldset {
+        border: 0;
+        margin-top: 40px;
+    }
+    ul.button-group li a.small.button{
+        font-size: 11px;
+        padding: 5px;
+    }
+    .page-user-register form input[type="text"], .page-user-register form input[type="password"] {
+        width: 40%!important;
+    }
+    .page-user-register fieldset.required-fields.group-personal,
+    .page-user-edit .fieldset.required-fields.group-personal input{
+        width: 100%;
+        margin-top: -32px;
+
+    }
+    .page-user-register input{
+        padding: 0;
+        margin: 0;
+    }
+    .page-user-register fieldset.required-fields.group-personal input,
+    .page-user-edit fieldset.required-fields.group-personal input
+    {
+        width: 109%!important;
+    }
+    .page-user-register #sidebard-main,
+    .page-user #sidebard-main,
+    .page-user-edit #sidebard-main{
+        margin-top: 60px;
+    }
+    .page-user form input[type="text"], .page-user form input[type="password"] {
+        width: 100%;
+    }
+    .alert-box a.close{
+        left:90%;
+    }
+    .page-user #user-profile-form input[type="text"], .page-user #user-profile-form input[type="password"] {
+        width: 40%;
+        padding: 0;
+        margin: 0;
+    }
+    .page-user #user-profile-form fieldset.required-fields.group-personal{
+        width: 100%;
+        margin-top: -18px;
+    }
+    .page-user fieldset legend {
+    background: none;
+    width: 40%;
+}
 
 }
 #exchancge-giff label{
@@ -2000,4 +2050,8 @@ ul.amazingcarousel-list li{
 #exchancge-giff .form-checkboxes label{
     font-size: 16px;
     font-weight: normal;
+}
+.carousel-inner .item{
+    text-align: center;
+    background: #000;
 }
