@@ -2055,3 +2055,7 @@ ul.amazingcarousel-list li{
     text-align: center;
     background: #000;
 }
+.carousel-inner .item img{
+    position: relative;
+    
+}
