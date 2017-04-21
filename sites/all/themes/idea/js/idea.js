@@ -380,27 +380,47 @@
                 $(".search-menu-mobile-wrapper").hide();
                 $("#search-idea").addClass('hide');
             });
-            $(".menu-icon a.menu-show-hide").click(function(){
-               if ($(".menu-mobile").hasClass('hide')) {
+            $(".menu-icon a.menu-show-hide").click(function () {
+                if ($(".menu-mobile").hasClass('hide')) {
                     $(".menu-mobile").removeClass('hide');
                 } else {
                     $(".menu-mobile").addClass('hide');
                 }
             });
-            
-            $(".link-post").click(function(){
-               $(".share-link").show();
-               $(".share-link").select();
+
+            $(".link-post").click(function () {
+                $(".share-link").show();
+                $(".share-link").select();
             });
-            
-            $(".link-post").mouseleave(function(){
-               setTimeout(function(){
-                   $(".share-link").hide();
-               },3000);
-                
-               
+
+            $(".link-post").mouseleave(function () {
+                setTimeout(function () {
+                    $(".share-link").hide();
+                }, 3000);
+
+
             });
-            
+
+            //add left for image
+            var sizeDivImg = $(".carousel-inner .item").width();
+
+
+            $(".carousel-inner .item img").each(function () {
+                var img = this;
+                $(this).attr("src", $(img).attr("src")).load(function () {
+                    pic_real_width = this.width;   // Note: $(this).width() will not
+                   //check current width
+                   var current = (sizeDivImg - pic_real_width) /2;
+                   $(this).css('left',current+'px');
+                   
+                });
+            });
+
+            function getOriginalWidthOfImg(img_element) {
+                var t = new Image();
+                t.src = (img_element.getAttribute ? img_element.getAttribute("src") : false) || img_element.src;
+                return t.width;
+            }
 
 
         }
