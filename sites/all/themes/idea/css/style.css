@@ -1165,7 +1165,7 @@ ul.menu{
 ul.menu li{
     float: left;
     height: 20px;
-    padding: 5px 15px 5px 80px;
+    padding: 5px 15px 5px 50px;
     list-style: none;
 }
 ul.menu li a{
