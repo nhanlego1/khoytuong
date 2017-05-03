@@ -914,9 +914,12 @@ function idea_custom_user_presave(&$edit, $account, $category)
  */
 function idea_get_article_cate($start = 0, $end = 5, $tid = null) {
     global $user;
-    if(arg(0)=='taxonomy' && arg(1)=='term'){
-        $tid = arg(2);
+        if($tid==null){
+            if(arg(0)=='taxonomy' && arg(1)=='term'){
+            $tid = arg(2);
+        } 
     }
+   
     $data = array();
     $query = db_select('node', 'n');
     $query->fields('n');
@@ -947,7 +950,7 @@ function idea_get_article_cate($start = 0, $end = 5, $tid = null) {
     }
     $query->range($start, $end);
     $result = $query->execute()->fetchAll();
-
+    //var_dump($result);
     if ($result) {
         foreach ($result as $n) {
             $node = node_load($n->nid);

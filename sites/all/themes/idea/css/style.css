@@ -343,7 +343,7 @@ ul.account-detail li a span {
     background: url("../images/icon-link.png") no-repeat center;
     cursor: pointer;
     position: relative;
-    top: -10px;
+    top: -34px;
     right: 10px;
 }
 
@@ -576,8 +576,8 @@ ul.pager--infinite-scroll li {
 .art-img span.video-popular img {
     position: absolute;
     z-index: 999;
-    top: 20%;
-    left: 44%;
+    top: 29%;
+    left: 47%;
     max-width: 10%;
 }
 
@@ -2097,4 +2097,7 @@ ul.amazingcarousel-list li{
 }
 .relate-post{
     display: none;
+}
+.article-item .art-img{
+    background: #000;
 }

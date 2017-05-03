@@ -44,12 +44,14 @@
                         //taxonomy
                         if ($(".page-taxonomy footer").length > 0) {
                             $(".idea-loading").show();
+                            console.log('nhan');
                             if (!isWorking) {
                                 if ($(window).scrollTop() > $(".page-taxonomy footer").offset().top - 800) {
                                     isWorking = true;
                                     var number_li = $(".view-news-article div.article-ideas").length;
                                     var num = number_li / 5;
-                                    var tid = $(".l-main .columns.top-center").attr('data');
+                                    var tid = $("#sidebar-main").attr('data');
+                                    console.log(tid);
                                     // var data_ = $(".loading-view").attr('data');
                                     $.post('/cate/pager', {pager: num, tid: tid})
                                             .done(function (data) {
@@ -411,6 +413,21 @@
                     pic_real_width = this.width;   // Note: $(this).width() will not
                    //check current width
                    var current = (sizeDivImg - pic_real_width) /2;
+                   $(this).css('left',current+'px');
+                   
+                });
+            });
+            
+            //add left for image
+            var sizeDivImgHome = $(".article-item .art-img").width();
+
+
+            $(".article-item .art-img img").each(function () {
+                var img = this;
+                $(this).attr("src", $(img).attr("src")).load(function () {
+                    pic_real_width = this.width;   // Note: $(this).width() will not
+                   //check current width
+                   var current = (sizeDivImgHome - pic_real_width) /2;
                    $(this).css('left',current+'px');
                    
                 });
