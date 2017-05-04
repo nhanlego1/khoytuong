@@ -62,18 +62,18 @@
             <meta property="og:video" content="<?php print $node->field_video[LANGUAGE_NONE][0]['video_url'] ?>"/>
             <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
                 <meta property="og:image"
-                      content="<?php print image_style_url('original', $node->field_img_thumb[LANGUAGE_NONE][0]['uri']) ?>"/>
+                      content="<?php print image_style_url('article_full', $node->field_img_thumb[LANGUAGE_NONE][0]['uri']) ?>"/>
             <?php else: ?>
             <meta property="og:image"
-                  content="<?php print image_style_url('original', $node->field_video[LANGUAGE_NONE][0]['thumbnail_path']) ?>"/>
+                  content="<?php print image_style_url('article_full', $node->field_video[LANGUAGE_NONE][0]['thumbnail_path']) ?>"/>
         <?php endif; ?>
     <?php else: ?>
         <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
             <meta property="og:image"
-                  content="<?php print image_style_url('original', $node->field_img_thumb[LANGUAGE_NONE][0]['uri']) ?>"/>
+                  content="<?php print image_style_url('article_full', $node->field_img_thumb[LANGUAGE_NONE][0]['uri']) ?>"/>
         <?php else: ?>
             <meta property="og:image"
-                  content="<?php print image_style_url('original', $node->field_images[LANGUAGE_NONE][0]['uri']) ?>"/>
+                  content="<?php print image_style_url('article_full', $node->field_images[LANGUAGE_NONE][0]['uri']) ?>"/>
         <?php endif; ?>
     <?php endif; ?>
     <?php endif; ?>
