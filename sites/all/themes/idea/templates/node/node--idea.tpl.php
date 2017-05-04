@@ -79,7 +79,9 @@ $user = user_load($node->uid);
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
-
+  <div class="hidden">
+    <?php print theme('image_style', array('path' => $node->field_img_thumb[LANGUAGE_NONE][0]['uri'], 'style_name' => 'original')) ?>
+  </div>
     <div class="user-post">
         <div class="avatar-post">
             <?php if (isset($user->picture)): ?>
