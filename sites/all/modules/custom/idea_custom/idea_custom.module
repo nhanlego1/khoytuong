@@ -496,6 +496,7 @@ function idea_custom_view_post($nid)
     global $user;
     $node = node_load($nid);
     if ($node && $node->status == NODE_PUBLISHED  && $node->type=='idea') {
+      $current = node_load($nid);
         db_insert('idea_views')// Table name no longer needs {}
         ->fields(array(
             'uid' => $user->uid,
@@ -505,14 +506,14 @@ function idea_custom_view_post($nid)
             'created' => REQUEST_TIME
         ))
             ->execute();
-        $node->field_views[LANGUAGE_NONE][0]['value'] = ($node->field_views[LANGUAGE_NONE][0]['value'] + 1);
-        node_save($node);
+        $current->field_views[LANGUAGE_NONE][0]['value'] = ($node->field_views[LANGUAGE_NONE][0]['value'] + 1);
+        node_save($current);
         //track log
         idea_custom_logs($nid, 'view');
         return $node->field_views[LANGUAGE_NONE][0]['value'];
 
     }
-    return $node->field_views[LANGUAGE_NONE][0]['value'];
+   // return $node->field_views[LANGUAGE_NONE][0]['value'];
 }
 
 /**
