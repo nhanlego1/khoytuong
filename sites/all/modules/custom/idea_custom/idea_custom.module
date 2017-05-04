@@ -495,8 +495,8 @@ function idea_custom_view_post($nid)
 {
     global $user;
     $node = node_load($nid);
-    if ($node && $node->status == NODE_PUBLISHED  && $node->type=='idea') {
-      $current = node_load($nid);
+    if ($node->type=='idea') {
+      //$current = node_load($nid);
         db_insert('idea_views')// Table name no longer needs {}
         ->fields(array(
             'uid' => $user->uid,
@@ -506,8 +506,9 @@ function idea_custom_view_post($nid)
             'created' => REQUEST_TIME
         ))
             ->execute();
-        $current->field_views[LANGUAGE_NONE][0]['value'] = ($node->field_views[LANGUAGE_NONE][0]['value'] + 1);
-        node_save($current);
+        $node->field_views[LANGUAGE_NONE][0]['value'] = ($node->field_views[LANGUAGE_NONE][0]['value'] + 1);
+        //$node->field['field_myfield'][LANGUAGE_NONE][0]['value'] = 1;
+        field_attach_update('node', $node);
         //track log
         idea_custom_logs($nid, 'view');
         return $node->field_views[LANGUAGE_NONE][0]['value'];
@@ -515,6 +516,8 @@ function idea_custom_view_post($nid)
     }
    // return $node->field_views[LANGUAGE_NONE][0]['value'];
 }
+
+//update views data
 
 /**
  * function share post
@@ -814,7 +817,7 @@ function _get_comment_count($nid)
 function idea_custom_node_view($node)
 {
     if ($node->type = 'idea') {
-        $views = idea_custom_view_post($node->nid);
+      idea_custom_view_post($node->nid);
     }
 }
 
@@ -1053,7 +1056,7 @@ function _search_mobile(){
  */
 function idea_custom_node_update($node){
     if($node->type=='idea'){
-       if($node->original->status==0 && $node->status==1){
+       if($node->original->status==0 && $node->status==1 && $node->type=='idea'){
            $user = user_load($node->uid);
            $user->field_score[LANGUAGE_NONE][0]['value'] =  $user->field_score[LANGUAGE_NONE][0]['value'] + variable_get('idea_post',20);
            user_save($user);
