@@ -892,7 +892,7 @@ function idea_custom_user_presave(&$edit, $account, $category)
     $select->fields('tt');
     $select->condition('email', $account->mail);
     $result = $select->execute()->fetchObject();
-    if ($result) {
+    if ($result && empty($account->field_full_name[LANGUAGE_NONE][0]['value'])) {
         $edit['field_full_name'][LANGUAGE_NONE][0]['value'] = $result->name;
     }
     //update score
