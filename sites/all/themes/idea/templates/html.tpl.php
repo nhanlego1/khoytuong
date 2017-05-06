@@ -59,7 +59,7 @@
         <meta property="og:type" content="article"/>
         <meta property="og:url" content="<?php print url('node/' . $node->nid, array('absolute' => true)) ?>"/>
         <?php if (isset($node->field_video[LANGUAGE_NONE])): ?>
-            <meta property="og:video" content="<?php print $node->field_video[LANGUAGE_NONE][0]['video_url'] ?>"/>
+            
             <?php if (isset($node->field_img_thumb[LANGUAGE_NONE])): ?>
                 <meta property="og:image"
                       content="<?php print image_style_url('article_full', $node->field_img_thumb[LANGUAGE_NONE][0]['uri']) ?>"/>
