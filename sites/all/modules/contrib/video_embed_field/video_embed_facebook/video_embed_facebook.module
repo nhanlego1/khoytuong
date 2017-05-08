@@ -98,7 +98,19 @@ function video_embed_facebook_handle_video($url, $settings) {
 
   if ($id) {
     // Our embed code.
-    $embed='<iframe class="@class" src="//www.facebook.com/video/embed?video_id=!id" width="@width" height="@height"></iframe> ';
+    $embed='<script>window.fbAsyncInit = function() {
+  FB.init({
+    xfbml      : true,
+    version    : \'v2.5\'
+  });
+  }; (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, \'script\', \'facebook-jssdk\'));</script>
+<div class="fb-video" data-href="https://www.facebook.com/video.php?v=!id" data-width="718" data-height="340" data-allowfullscreen="true" data-autoplay="true"></div>';
     // Use format_string to replace our placeholders with the settings values.
     $embed = format_string($embed, array(
       '!id' => $id,

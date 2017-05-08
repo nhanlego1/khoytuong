@@ -23,5 +23,4 @@
 <!--  <div class="fb-video" data-allowfullscreen="true" data-href="--><?php //print $url; ?><!--">-->
 <!--  <div class="fb-xfbml-parse-ignore">-->
 <!--</div>-->
-
 <div class="fb-video" data-href="<?php print $url; ?>" data-show-text="false"></div>
