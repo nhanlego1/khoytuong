@@ -313,7 +313,8 @@ function idea_custom_block_view($delta = '')
             $block['content'] = '<div class="idea-loading"><img src="' . base_path() . path_to_theme('idea') . '/images/ajax-loader.gif"/></div>';
             break;
         case 'idea_post_relate' :
-            $block['content'] = idea_custom_post_relate(2);
+            $node = menu_get_object('node');
+            $block['content'] = idea_custom_post_relate($node);
             break;
 
         case 'idea_post_front_top' :
@@ -363,24 +364,25 @@ function idea_custom_block_view($delta = '')
  * Idea post relate
  */
 
-function idea_custom_post_relate($ids)
+function idea_custom_post_relate($node, $ids = 2)
 {
     //add js and css
     drupal_add_js(drupal_get_path('module', 'idea_custom') . '/js/amazingcarousel.js');
     drupal_add_js(drupal_get_path('module', 'idea_custom') . '/js/initcarousel.js');
     drupal_add_css(drupal_get_path('module', 'idea_custom') . '/css/initcarousel.css');
-
-
-    $nid = arg(1);
+    
     $data = array();
     $query = db_select('node', 'n');
     $query->fields('n');
-    $query->condition('type', 'idea');
-    $query->condition('status', NODE_PUBLISHED);
-    $query->condition('nid', $nid, '<>');
-    $query->orderBy('changed', 'DESC');
+    $query->join('field_data_field_category','fc','fc.entity_id = n.nid');
+    $query->condition('n.type', 'idea');
+    $query->condition('n.status', NODE_PUBLISHED);
+    $query->condition('fc.field_category_tid', $node->field_category[LANGUAGE_NONE][0]['tid'],'=');
+    $query->condition('n.nid', $node->nid, '<>');
+    $query->condition('n.created', $node->created, '<');
+    $query->orderBy('n.created', 'ASC');
+    $query->range(0,4);
     $result = $query->execute()->fetchAll();
-
     if ($result) {
         foreach ($result as $n) {
             $node = node_load($n->nid);
