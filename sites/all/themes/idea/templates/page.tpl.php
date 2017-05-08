@@ -2,7 +2,7 @@
 <div role="document" class="page">
 
     <!--.l-header -->
-    <header role="banner" class="l-header">
+    <header role="banner" class="l-header" style="background: <?php print variable_get('bg_header','rgba(9, 9, 9, 0.7)') ?>">
 
         <nav class="top-bar" data-topbar>
             <ul class="title-area">

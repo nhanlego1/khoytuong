@@ -118,6 +118,13 @@ function idea_custom_menu()
         'access arguments' => array('administer idea'),
         'file' => 'idea.admin.inc',
     );
+    $items['admin/config/content/color'] = array(
+        'title' => 'Kho Y Tuong Color settings ',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('idea_admin_color'),
+        'access arguments' => array('administer idea'),
+        'file' => 'idea.admin.inc',
+    );
 
     return $items;
 }
@@ -1066,6 +1073,7 @@ function idea_custom_node_update($node){
     }
 }
 
+
 /**
- * function 
+ * 
  */
