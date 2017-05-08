@@ -282,7 +282,7 @@ function idea_custom_block_view($delta = '')
     global $user;
     switch ($delta) {
         case 'idea_search_icon' :
-            $block['content'] = '<div class="idea-search-icon"><a href="#">search</a></div>';
+            $block['content'] = '<div class="idea-search-icon"><a href="/search/google">search</a></div>';
             break;
 
         case 'account_info' :
