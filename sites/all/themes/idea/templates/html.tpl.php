@@ -98,7 +98,7 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<body style="background: <?php print variable_get('bg_page','#f0eeee') ?>" class="<?php print $classes; ?> idea" <?php print $attributes; ?>>
+<body style="background: <?php print variable_get('bg_page','#f0eeee') ?>!important;" class="<?php print $classes; ?> idea" <?php print $attributes; ?>>
 <div class="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
 </div>
