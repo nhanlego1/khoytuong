@@ -75,11 +75,13 @@ function idea_admin() {
     '#type' => 'textfield',
     '#title' => 'Backdround color header',
     '#default_value' => variable_get('bg_header', 'rgba(9, 9, 9, 0.7)'),
+    '#description'=>'Ex: <i>#eeefff</i> hay <i>red</i> hay <i>rgba(9, 9, 9, 0.7)</i>',
   );
   $form['setting']['bg_page'] = array(
     '#type' => 'textfield',
     '#title' => 'Backdround color page',
     '#default_value' => variable_get('bg_page', '#f0eeee'),
+    '#description'=>'Ex: <i>#eeefff</i> hay <i>red</i> hay <i>rgba(9, 9, 9, 0.7)</i>',
   );
 
   $form['setting']['email_processcing'] = array(
