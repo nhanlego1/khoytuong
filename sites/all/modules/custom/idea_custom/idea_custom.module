@@ -19,7 +19,7 @@ function idea_custom_menu()
         'title' => 'Admin Dashboard ',
         'description' => 'Control config for artline.',
         'page callback' => 'idea_admin_dashboard',
-        'access arguments' => array('administer artline'),
+        'access arguments' => array('administer idea'),
         'file' => 'idea_custom.pages.inc',
     );
     $items['frontpage/pager'] = array(
