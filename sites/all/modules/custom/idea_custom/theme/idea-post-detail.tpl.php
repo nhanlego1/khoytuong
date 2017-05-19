@@ -61,5 +61,5 @@ $account = user_load($node->uid);
 <?php print idea_comment_form($node->nid) ?>
 
 <div class="relate-post">
-    <?php print  idea_custom_post_relate(3); ?>
+    <?php print  idea_custom_post_relate($node); ?>
 </div>
